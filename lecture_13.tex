@@ -1,0 +1,204 @@
+\chapter*{Lecture 13}
+\begin{recall}{}{}
+\begin{itemize}
+\item Introduction to 2nd order ODEs
+\end{itemize}
+\end{recall}
+
+
+
+
+
+\section{Solution superposition in homogeneous ODEs}
+Let's suppose you have the following (homogeneous) second-order ODE:
+\begin{equation*}
+\frac{d^2 y}{dx^2}=y
+\end{equation*}
+By looking at the equation we can identify the solutions:
+\begin{itemize}
+\item $y=e^x$ since $\frac{d^2 y}{dx^2}= \frac{d^2 e^x}{dx^2}=e^x$
+\item $y=e^{-x}$ since $\frac{d^2 y}{dx^2}= \frac{d^2 e^{-x}}{dx^2}=e^{-x}$
+\end{itemize} 
+what about this solution?
+\begin{equation*}
+y=c_1 e^{x}+ c_2e^{-x}
+\end{equation*}
+For the sake of the example, we suppose that $c_1=3$ and $c_2=2/5$.
+
+\begin{eqnarray*}
+y''-y = (c_1 e^{x}+ c_2e^{-x})''- (c_1 e^{x}+ c_2e^{-x})=\\
+3 e^{x} + 2/5e^{-x} - (3 e^{x}+ 2/5e^{-x})=0
+\end{eqnarray*}
+
+
+This last solution tells us that there are an infinite number of solutions to this ODE (since the constants may take any values).
+\\
+\textbf{For a \emph{homogeneous linear equation}, we can always obtain new solutions from known solutions by multiplication by constant or by addition.} \\
+
+This is called a \textbf{linear combination} of solutions. We will refer to this as the  \textbf{superposition principle} or the \textbf{linearity principle}.\\
+
+NOTE: this theory does not hold for non-homogeneous linear equations nor for non-linear equations!!!
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Linearity principle of a nonhomogeneous DE:}\\
+Suppose the following ODE:
+\begin{equation*}
+y''+y=1
+\end{equation*}
+(this is a nonhomogeneous, linear, 2nd-order ODE).
+Show that the priciple of linearity does NOT hold.\\
+\textbf{Solution:}
+The solutions of this ODE are $y_1=1+cos(x)$ and $y_2=1+sin(x)$. Is the linear superposition of these two also a solution to the ODE?\\
+$y=c_1 y_1 + c_2 y_2 = c_1(1+cos(x))+c_2(1+sin(x))$:
+(suppose $c_1=c_2=1$ for simplicity)
+\begin{eqnarray*}
+(2+cos(x)+sin(x))''+(2+cos(x)+sin(x))-1=0\\
+-cos(x)-sin(x)+(2+cos(x)+sin(x))-1\neq 0\\
+\end{eqnarray*}
+The linear combination of the two solutions is NOT a solution to the ODE. (because the solution is nonhomogeneous)
+\end{exmp}
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+
+It is also important to remember that in order to apply the superposition, the solutions must be linearly independent from one another!
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+\begin{exmp}{Linear independence:}\\
+Coming back to the first example:
+\begin{equation*}
+\frac{d^2 y}{dx^2}=y
+\end{equation*}
+Do the following superposed solutions form the general solution to the ODE?
+\begin{equation*}
+y=2 e^x+ 4 e^x
+\end{equation*}
+This is not the general solution to the ODE as the two solutions are not linearly independent!
+[Prove!]
+\end{exmp}
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+How can we tell if solutions are linearly independent from each other? We can evaluate the \textbf{Wronski determinant} or also called \textbf{Wronskian}.\\
+
+Given two functions $y_1$ and $y_2$, the Wronskian, $W(y_1,y_2)$ is defined as:
+\begin{equation*}
+W(y_1,y_2)=\left|\begin{bmatrix}
+    y_1 & y_2  \\
+    y'_1 & y'_2
+  \end{bmatrix}\right| = y_1y'_2 -y'_1y_2
+\end{equation*}
+(where $\left| \cdot \right|$ is the determinant!)
+
+If $W(y_1,y_2)\neq 0$ the functions are linearly independent!
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Linear (in)dependence:}\\
+Given the ODE:
+\begin{equation*}
+y''+ \omega^2 y=0
+\end{equation*}
+The solutions are $y_1=cos(\omega x)$ and $y_2=sin(\omega x)$. The Wronskian is:
+\begin{equation*}
+W(y_1,y_2)=\left|\begin{bmatrix}
+    cos(\omega x) & sin(\omega x)  \\
+    -\omega sin(\omega x) & \omega cos(\omega x)
+  \end{bmatrix}\right| = \omega(cos^2(\omega x)+sin^2(\omega x))=\omega \neq 0
+\end{equation*}
+Therefore the solutions are linearly independent!
+
+\end{exmp}
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{testv}{}{}
+\subsection{Solution techniques for linear second-order ODEs}
+\begin{itemize}
+\item Reduction of order
+\item Auxiliary equation
+\item Method of undetermined coefficients
+\item Variation of parameters
+\end{itemize}
+\end{testv}
+
+%
+%\section{Reduction of order}
+%\textbf{Basic idea:} Reduce a 2nd order ODE to a 1st order ODE by introducing a new function $V(x)=\frac{dy}{dx}$.\\
+%
+%Two main cases are examined:
+%\begin{itemize}
+%\item Equation with "missing terms" can be directly solved (today)
+%\item Know one solution, and we want to find a second linearly independent solution (next thursday)
+%\end{itemize}
+%
+%\subsection{Missing terms}
+%Recall the standard form of a 2nd order linear ODE:
+%\begin{equation*}
+%\boxed{\frac{d^2y}{dx^2} +p(x)\frac{dy}{dx}+ q(x)y=0}
+%\end{equation*}
+%From this standard three cases can be distinguished:
+%\begin{enumerate}
+%\item missing $p(x)\frac{dy}{dx}$ and $q(x)y$
+%\item missing $q(x)y$
+%\item missing $p(x)\frac{dy}{dx}$ 
+%\end{enumerate}
+%
+%\subsubsection{General procedure}
+%\begin{enumerate}
+%\item Introduce $V(x)=\frac{dy}{dx}$
+%\item Sub $V(x)$ into the ODE and get a 1st order ODE for $V(x)$
+%\item Solve for $V(x)$
+%\item Solve for $y$ by integration $y(x)=\int V dx$
+%\end{enumerate}
+%
+%\begin{center}
+%\noindent\rule{4cm}{0.4pt}
+%\end{center}
+%
+%\begin{exmp}{Order reduction:}\\
+%Solve:
+%\begin{equation*}
+%\frac{d^2y}{dx^2}=4x
+%\end{equation*}
+%Solution:
+%\begin{enumerate}
+%\item Introduce  $V(x)=\frac{dy}{dx}$ and $\frac{V(x)}=\frac{d^2y}{dx^2}$
+%\item Sub $V(x)$ into the ODE
+%\begin{equation*}
+%\frac{dV(x)}{dx}=4x
+%\end{equation*}
+%
+%\item Solve (Separation and integration!)
+%\begin{equation*}
+%V(x)=\int 4x dx +C = 2x^2 +c_1
+%\end{equation*}
+%\item Solve for $y$\\
+%\begin{equation*}
+%y(x)=\int V dx=\int (2x^2 +c_1) dx = \frac{2}{3}x^3 +c_1x +c_2
+%\end{equation*}
+%
+%Our General solution is:
+%\begin{equation*}
+%y(x)= \frac{2}{3}x^3 +c_1x +c_2
+%\end{equation*}
+%Note: we have 2 integrative constants (as we have a second-order ODE).
+%\end{enumerate}
+%\end{exmp}
+%
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\updateinfo[October 10, 2018]

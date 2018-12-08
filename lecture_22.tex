@@ -1,0 +1,132 @@
+\chapter*{Lecture 22}
+\begin{recall}{}{}
+\begin{itemize}
+\item MUC the judicious guess.
+\item MUC superposition
+\item MUC double root case
+\item  $F(x)$ is limited to simple cases (which maintain the same general form under differentiation, e.g. polynomial, exponents, sines)
+\end{itemize}
+\end{recall}
+
+
+Ok, time to pull your hair out a bit...
+\begin{exmp}{MUC (special case):}\\
+Solve:
+\begin{equation*}
+y''+y=\cos(x)
+\end{equation*}
+Solution:
+\begin{itemize}
+\item Find the homogeneous solution:\\
+\begin{equation*}
+r^2+1=0 \qquad r=\pm i \qquad \alpha=0; \beta=1
+\end{equation*}
+Two complex roots!
+\begin{equation*}
+\boxed{y_h=C_1 \cos(x)+C_2 \sin(x)}
+\end{equation*}
+\item Particular solution: Since $F(x)=\cos(x)$ we assume $y_p=a\cos(x)+b\sin(x)$.
+\begin{align*}
+y'_p=-a\sin(x)+b\cos(x)\\
+y''_p=-a\cos(x)-b\sin(x)\\
+\end{align*}
+Sub into the ODE:
+\begin{align*}
+(-a\cos(x)-b\sin(x))+a\cos(x)+b\sin(x)=\cos(x)\\
+0 = \cos(x)
+\end{align*}
+Wrong! Cannot determine $a$ and $b$ for $y_p$!!!!
+We made a wrong guess!
+If we check the homogeneous solution, it takes the same standard form as the particular solution. Using that info, we try a new guess: $y_p=ax\cos(x)+bx\sin(x)$.
+\begin{align*}
+y'_p=(a+bx)\cos(x)+(b-ax)\sin(x)\\
+y''_p=(2b-ax)\cos(x)-(2a+bx)\sin(x)
+\end{align*}
+sub into the ODE:
+\begin{align*}
+\underbrace{(2b-ax)\cos(x)-(2a+bx)\sin(x)}_{y''_p}+\underbrace{ax\cos(x)+bx\sin(x)}_{y_p}=\cos(x)
+\end{align*}
+After simplifications:
+\begin{align*}
+2b\cos(x)-2a\sin(x)=\cos(x)\\
+2b=1; \text{or } b=1/2; \qquad 2a=0 \text{or } a=0
+\end{align*}
+The particular solution is then:
+\begin{align*}
+y_p=1/2x \sin(x)
+\end{align*}
+\item General solution:
+\begin{align*}
+\boxed{y_g=C_1 \cos(x)+C_2 \sin(x)+\frac{1}{2}x \sin(x)}
+\end{align*}
+
+\end{itemize}
+\end{exmp}
+\textbf{Conclusion:} If the guessed $y_p$ is the same as $y_h$, try $y_p=xy_c$!
+
+
+
+
+
+\section{Variation of Parameter - VoP}
+This approach can be applied to 2nd order, linear, non-homogeneous ODEs with \textbf{variable} coefficients and for arbitrary RHS: $F(x)$.
+
+We write our second-order ODE in general form:
+\begin {equation*}
+y''+p(x) y' + q(x)y=F(x)
+\end {equation*}
+
+The general solution of the \textbf{homogeneous} equation is:
+\begin {equation*}
+y_h=c_1 y_1(x) +c_2 y_2(x)
+\end {equation*}
+Here $c_1$ and $c_2$ can be considered parameters of the ODE (thus the name of the method). The method of variation of parameters involves replacing the parameters with functions $v_1(x)$  and  $v_2(x)$ so that we obtain a particular solution of the form:
+\begin {equation*}
+y_p=v_1(x) y_1(x) +v_2(x) y_2(x)
+\end {equation*}
+
+By differentiating, we obtain:
+\begin {align*}
+y'_p=v'_1(x) y_1(x)+v_1(x) y'_1(x) +v'_2(x) y_2(x)+v_2(x) y'_2(x)\\
+y'_p=\left(v'_1(x) y_1(x)+v'_2(x) y_2(x)\right)+\left(v_1(x) y'_1(x)+v_2(x) y'_2(x)\right)
+\end {align*}
+We have added two new functions $v_1$ and $v_2$. We know that $y_1$ and $y_2$ are constrained being solutions of the homogeneous ODE. Currently, we have only imposed one constraint on the new functions, namely that $y_p$ must satisfy the non-homogeneous ODE. We can impose a second constraint. Here for simplicity, we state that:
+\begin {align*}
+\left(v'_1(x) y_1(x)+v'_2(x) y_2(x)\right)=0
+\end {align*}
+Therefore, we obtain:
+\begin {align*}
+y'_p=\left(v_1(x) y'_1(x)+v_2(x) y'_2(x)\right)\\
+y''_p=\left(v'_1(x) y'_1(x)+v'_2(x) y'_2(x)\right) +\left(v_1(x) y''_1(x)+v_2(x) y''_2(x)\right)
+\end {align*}
+Now, we can substitute these equations into the original ODE:
+\begin {align*}
+y_p''+p  y_p' + q y_p=F(x)\\
+\left(v'_1  y'_1 +v'_2  y'_2  +v_1  y''_1 +v_2  y''_2 \right) +p \left(v_1  y'_1 +v_2  y'_2 \right)+q (v_1  y_1  +v_2  y_2) =F(x)\\
+\end {align*}
+We can now group the common term together:
+\begin {align*}
+\left(v'_1 y'_1 +v'_2 y'_2 \right) + v_1 \underbrace{\left(y''_1 +p y'_1+q y_1 \right)}_{=0} + v_2 \underbrace{\left( y''_2 +py'_2 + qy_2 \right)}_{=0}=F(x)
+\end {align*}
+Remember $y_1$ and $y_2$ are solutions to the HOMOGENEOUS equation!
+
+Therefore, we obtain:
+\begin {align*}
+v'_1 y'_1 +v'_2 y'_2 =F(x)\\
+v'_1 y_1 +v'_2 y_2 =0
+\end {align*}
+An algebraic manipulation of the equations lead to:
+\begin {align*}
+v'_1 =\frac{-F(x) y_2}{y_1y'_2-y'_1y_2} \qquad \text{and}\qquad v'_2 =\frac{F(x) y_1}{y_1y'_2-y'_1y_2}
+\end {align*}
+In what situation will the denominator be zero????
+The denominator represents the Wronskian which is non-zero for linearly independent solution, therefore if $y_1$ and $y_2$ are solutions, they will be linearly independent!
+
+
+The integration of the above equations yield:
+\begin {align*}
+v_1 =\int\frac{-F(x) y_2}{y_1y'_2-y'_1y_2} dx \qquad \text{and}\qquad v_2 =\int \frac{F(x) y_1}{y_1y'_2-y'_1y_2}dx
+\end {align*}
+What about integrative constants when plugging it back in to the ODE? 
+
+\updateinfo[October 30, 2018]

@@ -1,0 +1,183 @@
+
+\chapter*{Lecture 8}
+\begin{recall}{}{}
+\begin{itemize}
+
+\item Integrating factors
+\item Introduction to linear first-order equations
+\end{itemize}
+\end{recall}
+
+
+\section{First-order Linear Equations (corresponds to 2.3 in book)}
+
+Recall (Chap 1): a \textbf{linear first-order equation} is an equation that can be written in the form:
+\begin{equation}
+a_1(x)\frac{dy}{dx}+a_0(x) y=b(x)
+\label{firstorderlinear}
+\end{equation}
+
+The above linear DE can be easily solved in the following three cases:
+\begin{enumerate}
+\item \textbf{If $a_0=0$}. In this case, we obtain:
+\begin{equation*}
+a_1(x)\frac{dy}{dx} =b(x)
+\end{equation*}
+which can be solved by direct integration. 
+\item \textbf{If $b(x)=0$}. We have a homogeneous equation:
+\begin{equation*}
+\frac{dy}{dx} =-\frac{a_0(x)}{a_1(x)} y= F(x)G(y)
+\end{equation*}
+which is separable and can then solved via direct integration.
+\item \textbf{If $a_0=a'_1$}. This is a bit less obvious. 
+\begin{equation*}
+a_1(x)\frac{dy}{dx}+\frac{da_1(x)}{dx} y=\frac{d\,a_1 y}{dx}=b(x)
+\label{ODElin}
+\end{equation*}
+This product rule allows us to solve a much simpler problem!
+\end{enumerate}
+
+
+
+Recall:
+\begin{equation*}
+a_1(x)\frac{dy}{dx}+\underbrace{\frac{da_1(x)}{dx}}_{a_0} y=\frac{d\,a_1 y}{dx}=b(x)
+\end{equation*}
+We can easily solve the problem is $a_0=\frac{da_1(x)}{dx} $!! \\
+
+\noindent\fbox{%
+    \parbox{\textwidth}{The main idea of the linear equation solution is to reformulate the linear, first-order ODE \eqref{firstorderlinear} into a derivative of a coefficient times the dependent variable. In most cases we will resort to an "integrating factor".}} \par
+\vspace{0.75cm}
+
+
+
+We will see that ODEs are written in standard form:
+\begin{equation}
+\boxed{\frac{dy}{dx}+P(x) y=Q(x)}
+\end{equation}
+(note the abuse of notation with previous section with regards to $P$ and $Q$)\\
+where $P(x)=a_0/a_1$ and $Q(x)=b/a_1$.\par
+
+We seek to find an \textbf{integrating factor} such that :
+\begin{equation*}
+U(x)\frac{dy}{dx}+\underbrace{\textcolor{red}{U(x)P(x)}}_\text{same} y=U(x)Q(x) = \frac{d\, [U(x) y]}{dx} =U(x)\frac{dy}{dx}+\underbrace{\textcolor{red}{U'(x)}}_{same} y 
+\end{equation*}
+ We need to find $U(x)$ such that:
+ \begin{equation}
+ U' = \frac{d\, U}{d\,x}= UP
+ \label{intFac}
+ \end{equation}
+
+
+The integrating factor can be found from \eqref{intFac}:
+ \begin{equation*}
+U(x) = e^{\int P(x) dx}
+ \end{equation*}
+(we can use any integration constant)\\
+
+The correct integrating factor, $U(x)$, means that we can solve the following equation:
+\begin{equation*}
+\frac{d\,}{dx}\left[U(x) y\right]= U(x)Q(x)
+\end{equation*}
+The solution is then (trivially):
+\begin{equation}
+y(x)=\frac{1}{U(x)}\left[\int U(x)Q(x)dx + C \right]
+\end{equation}
+(IMPORTANT: The integrative constant is within the brackets!)
+
+
+\textbf{Solution strategy:}
+\begin{enumerate}
+\item Rewrite in standard form:
+\begin{equation*}
+\frac{dy}{dx}+P(x) y=Q(x)
+\end{equation*}
+Make sure it is linear!!! 
+\item Compute the integrating factor $U(x)$ such that:
+ \begin{equation*}
+ U' = UP \qquad \qquad \text{or}\qquad \qquad U(x)=e^{\int P(x) dx}
+ \end{equation*}
+\item Multiply the ODE by the integrating factor:
+ \begin{equation*}
+\frac{d\,}{dx} (U(x)y) = U(x)Q(x) 
+\end{equation*}
+
+\item Integrate and reorganize the last equation to obtain an explicit solution.
+\end{enumerate}
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+
+\begin{exmp}{Linear Differential Equations:}\\
+Solve:
+\begin{equation*}
+y'-y=e^{2x}
+\end{equation*}
+\textbf{Solution:}\\
+\begin{enumerate}
+\item Write in standard for: (check)
+\item Find integrating factor:
+ \begin{equation*}
+U(x) = e^{\int P(x) dx}= e^{\int(-1) dx}=e^{-x}
+ \end{equation*}
+ \item Multiply the ODE by the integrating factor
+ \begin{equation*}
+U(x)y'-U(x)y=\frac{d\, Uy}{dx}=U(x)e^{2x}=e^{-x}e^{2x}
+\end{equation*}
+\item Solve the above equation:
+ \begin{equation*}
+\frac{d\, Uy}{dx}=e^{-x}e^{2x}=e^x
+\end{equation*}
+ \begin{equation*}
+y=\frac{1}{e^{-x}}\left[\int{e^x} dx\right]=e^{2x}+ce^x
+\end{equation*}
+\end{enumerate}
+
+\end{exmp}
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center} 
+
+\begin{exmp}{Linear Differential Equations:}\\
+Solve:
+\begin{equation}
+y'+y \tan(x) =\sin(2x) \qquad \qquad \text{with}\qquad y(0)=1
+\end{equation}
+\textbf{Solution:}\\
+\begin{enumerate}
+\item Write the equation in standard form:
+\begin{equation*}
+y'+\underbrace{\tan(x)}_{P(x)} y =\underbrace{\sin(2x)}_{Q(x)} \qquad \qquad \text{with}\qquad y(0)=1
+\end{equation*}
+\item Find the integrating factor:
+ \begin{equation*}
+U(x) = e^{\int tan(x) dx}
+ \end{equation*}
+ Recall: $\int tan(x) dx=\ln \left| \sec x\right|$, therefore:
+  \begin{equation*}
+U(x) = e^{\int tan(x) dx}=\left| \sec x \right |
+ \end{equation*}
+ \item Multiply the ODE by the integrating factor:
+ \begin{equation*}
+\frac{d\,}{dx} (U(x)y) = U(x)Q(x) = \sec x {\sin(2x)} 
+\end{equation*}
+\item Solve:
+  \begin{equation*}
+y = \frac{1}{U(x)} \int\sec x {\sin(2x)}dx =\frac{-2cos(x)}{sec(x)} + \frac{C}{sec(x)}= -2cos^2(x) + \frac{C}{sec(x)}
+\end{equation*}
+where $C=3$ (check IC).
+The particular solution is:
+  \begin{equation*}
+y = -2cos^2(x) + 3cos(x)
+\end{equation*}
+\end{enumerate}
+\end{exmp}
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\updateinfo[September 25, 2018]
+

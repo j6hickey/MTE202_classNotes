@@ -1,0 +1,183 @@
+
+\chapter*{Lecture 32}
+
+\begin{recall}{}{}
+\begin{itemize}
+\item Method of partial fraction
+\end{itemize}
+\end{recall}
+\begin{itemize}
+
+\item \textbf{Non constant coefficient IVP:} Not always possible but can be done in specific cases:
+\begin{exmp}{}
+Suppose we want to solve:
+\begin{equation*}
+y'' +3ty'-6y=2
+\end{equation*}
+with $y(0)=0$ and $y'(0)=0$. \\
+\textbf{Solution:}\\
+From the table, we know that $\Lapl(t^n f(t)) = (-1)^n F^{(n)}(s)$. Therefore:
+\begin{align*}
+\Lapl(ty')&=-\frac{d}{ds}\left(\Lapl (y')\right)\\
+&=-\frac{d}{ds}\left(sY(s)-y(0)\right)\\
+&=-sY'(s)-Y(s)
+\end{align*}
+Using this knowledge, we can apply the LT to the DE:
+\begin{align*}
+\underbrace{s^2Y(s)-sy(0)-y'(0)}+3\left(-sY'(s)-Y(s)\right)-6Y(s)=\frac{2}{s}\\
+-3sY'(s) + (s^2-9)Y(s)=\frac{2}{s}\\
+Y'(s) + (\frac{3}{s}-\frac{s}{3})Y(s)=\frac{-2}{3s^2}
+\end{align*}
+Here is where it differs from the previous examples, we must solve a first-order differential equation. It can be solved with an integrating factor:
+\begin{align*}
+U=e^{\int \left(\frac{3}{s}-\frac{s}{3}\right)ds}=e^{\ln(s^3)-\frac{s^2}{6}}=s^3e^{-\frac{s^2}{6}}
+\end{align*}
+We multiply through with the IF, with a bit of math, we find:
+\begin{align*}
+Y(s)=\frac{2}{s^3}+c\frac{e^{\frac{s^2}{6}}}{s^3}
+\end{align*}
+(note the constant of integration).  This is where it becomes a bit more complicated. Since we assumed that all our functions are of exponential order, we can state that:
+\begin{equation*}
+\lim_{s\rightarrow\infty}\left(\frac{2}{s^3}+c\frac{e^{\frac{s^2}{6}}}{s^3}\right)=0
+\end{equation*}
+This is true by definition of a Laplace transform. The first term is always satisfies the limit. The second term is only satisfied if $c=0$. This yields:
+\begin{align*}
+Y(s)=\frac{2}{s^3} \qquad \text{or }\qquad y(t)=t^2
+\end{align*}
+\end{exmp}
+
+
+\end{itemize}
+
+
+
+
+\section*{Properties of the inverse LT}
+
+
+\begin{itemize}
+\item[1] Unrepeated linear factors (yesterday)
+\item[2] Repeated factors (yesterday)
+\item[3] $Q(s)$ has non-repeated, irreducible, quadratic factors. This case takes the form:
+\begin{align*}
+Q(s)=as^2+bs+c
+\end{align*}
+and 
+\begin{align*}
+F(s)=\frac{P(s)}{Q(s)}=\frac{As+B}{as^2+bs+c}
+\end{align*}
+We can rearrange such that:
+\begin{align*}
+F(s)=\frac{\frac{A}{a}s+\frac{B}{a}}{s^2+\frac{b}{a}s+\frac{c}{a}}=\frac{E(s-\alpha)+D\beta}{(s-\alpha)^2+\beta^2}
+\end{align*}
+where $s^2-\underbrace{2\alpha }_{b/a}s+\underbrace{\alpha^2+\beta^2}_{c/a}={(s-\alpha)^2+\beta^2}$.
+
+
+Therefore:
+\begin{align*}
+&\alpha=-\frac{b}{2a}\\
+&\beta=\frac{\sqrt{\textcolor{red}{4ac-b^2}}}{2a}
+\end{align*}
+Now we need to determine $D$ and $E$. Using the tables, we have:
+\begin{align*}
+&\Lapl^{-1}\left[\frac{s-a}{(s-a)^2+b^2}\right]=e^{at}\cos(bt)\\
+&\qquad \text{and}\\
+&\Lapl^{-1}\left[\frac{b}{(s-a)^2+b^2}\right]=e^{at}\sin(bt)
+\end{align*}
+\begin{exmp}{}
+Solve:
+\begin{equation*}
+F(s)=\frac{2s}{4s^2+4s+3}
+\end{equation*}
+\textbf{Solution:}\\
+Let's reformulate the equation into the same form as previously (without a 4 in the denominator):
+\begin{equation*}
+F(s)=\frac{\frac{s}{2}}{s^2+s+\frac{3}{4}}
+\end{equation*}
+
+The equation has irreducible factors. Let's find the coefficients $\alpha$ and $\beta$:
+\begin{align*}
+\alpha=-\frac{1}{2}\qquad \text{and } \beta=\frac{\sqrt{2}}{2}
+\end{align*}
+We can rewrite our equation as:
+\begin{equation*}
+F(s)=\frac{\frac{s}{2}}{s^2+s+\frac{3}{4}}=\frac{E(s+\frac{1}{2}) + D\frac{\sqrt{2}}{2}}{(s+\frac{1}{2})^2+(\frac{\sqrt{2}}{2})^2}
+\end{equation*}
+Now we can find the undertemined coefficients by equalizing the numerator:
+\begin{equation*}
+\frac{s}{2}=E(s+\frac{1}{2}) + D\frac{\sqrt{2}}{2}
+\end{equation*}
+or again:
+\begin{equation*}
+E=\frac{1}{2} \qquad\text{and } D=-\sqrt{2}/4
+\end{equation*}
+\end{exmp}
+Our equation becomes:
+\begin{equation*}
+F(s)=\frac{\frac{1}{2}(s+\frac{1}{2})}{(s+\frac{1}{2})^2+(\frac{\sqrt{2}}{2})^2}+\frac{ \left(-\frac{\sqrt{2}}{4}\right)\frac{\sqrt{2}}{2}}{(s+\frac{1}{2})^2+(\frac{\sqrt{2}}{2})^2}
+\end{equation*}
+We can find these forms in the table. Finally, our the inverse LT becomes:
+%
+\begin{equation*}
+f(t)=\frac{1}{2}e^{-\frac{1}{2}t}\cos\left(\frac{\sqrt{2}}{2}t\right)-\frac{\sqrt{2}}{4}e^{-\frac{1}{2}t}\sin\left(\frac{\sqrt{2}}{2}t\right)
+\end{equation*}
+\end{itemize}
+
+\section{Laplace transform of IVP}
+General procedures:
+\begin{enumerate}
+\item LT of the ODE, find $F(s)$
+\item Find partial fractions of $F(s)$
+\item Inverse LT of $F(s)$ to find $f(t)$
+\end{enumerate}
+
+
+
+\begin{exmp}{}
+Solve:
+\begin{equation*}
+y''-3y'+2y=e^{-t}
+\end{equation*}
+with $y(0)=1$ and $y'(0)=0$.\\
+\textbf{Solution:}\\
+\begin{enumerate}
+\item LT of the ODE:\\
+\begin{align*}
+&\Lapl(y'')-3\Lapl(y')+2\Lapl(y)=\Lapl(e^{-t})\\
+&s^2Y(s)-sy(0)-y'(0) -3(sY(s)-y(0))+2Y(s)=\frac{1}{s+1}
+\end{align*}
+We sub the ICs into the above equation:
+\begin{align*}
+&s^2Y(s)-s -3sY(s)-3+2Y(s)=\frac{1}{s+1}
+\end{align*}
+Rearrange:
+\begin{align*}
+&(s^2-3s+2)Y(s)=\frac{1}{s+1}+s-3\\
+&Y(s)=\frac{s^2-2s-2}{(s+1)(s^2-3s+2)}
+\end{align*}
+We observe that $(s^2-3s+2)=(s-1)(s-2)$
+\item Find the partial fractions:
+
+\begin{align*}
+&Y(s)=\frac{P(s)}{Q(s)}=\frac{A}{(s+1)}+\frac{B}{(s-1)}+\frac{C}{(s-2)}
+\end{align*}
+We equalize the numerator:
+\begin{align*}
+s^2-2s-2&=(s-1)(s-2)A+(s+1)(s-2)B+(s+1)(s-1)C\\
+\end{align*}
+At $s=-1,1,2$ we evaluate:
+\begin{align*}
+(-1)^2-2(-1)-2&=1=(-2)(-3)A \qquad &A=1/6\\
+1^2-2(1)-2&=-3=(1+1)(1-2)B &B=3/2\\
+(2)^2-2(2)-2&=-2=(2+1)(2-1)C &C=-2/3\\
+\end{align*}
+We find:
+\begin{align*}
+&Y(s)=\frac{1/6}{(s+1)}+\frac{3/2}{(s-1)}-\frac{2/3}{(s-2)}
+\end{align*}
+\item Inverse LT:
+\begin{align*}
+\boxed{y(t)=\frac{1}{6}e^{-t}+\frac{3}{2}e^{t}-\frac{2}{3}e^{2t}}
+\end{align*}
+\end{enumerate}
+\end{exmp}

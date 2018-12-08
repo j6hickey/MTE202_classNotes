@@ -1,0 +1,208 @@
+\chapter*{Lecture 4}
+\begin{recall}{}{}
+\begin{itemize}
+\item Order of the equation tells us the number of necessary ICs
+\item Initial Value Problem (IVP)
+\item Solution methods for first-order ODEs
+\end{itemize}
+
+
+\end{recall}
+
+
+\section{Substitution and Transformation (corresponds to 2.6 in book)} 
+If the equation is not separable, we may still be able to solve it by applying a substitution and transformation.\\
+
+Main idea: make the ODE separable!\\
+
+Substitution procedure:
+\begin{enumerate}
+\item Identify the type of equation and determine the substitution or transformation (some level of intuition required)
+\item Rewrite the original equation in terms of the new variable
+\item Solve the transformed equation (e.g. direct integration)
+\item Express the solution in terms of the original variables
+\end{enumerate}
+
+\subsection{Homogeneous equation}
+Before, we continue, let's consider this equation:
+\begin{equation}
+\frac{dy}{dx}=f(x,y)
+\end{equation}
+Is this equation homogeneous? [We note here that "homogeneous equation" differs from our previous use of the term which was in the context of a "homogeneous linear differential equation"]. If the function $f(x,y)$ can be expressed as a ratio of $y/x$ (or $x/y$) the equation is homogeneous.  Typically, a homogeneous equation depends on the form of $f(x,y)$. For example, if $f(x,y)=xy$, the equation would be homogeneous. But, if we have $f(x,y)=x+y$, we have a non-homogeneous equation. But what about this $f(x,y)=\frac{x+y}{x}$?\\
+
+Here we show that through substitution, we can obtain a homogeneous for the last example. More generally, if the RHS can be written as a ratio of $y/x$ alone, then we say that the equation is \textbf{homogeneous}.
+
+If we can write $f(x,y)=f(y/x)$, we can substitute a new variable $v=y/x$ such that the RHS is $f(v)$. We have:
+\begin{equation}
+\frac{dy}{dx}=f(v)
+\label{midTransform}
+\end{equation}
+Now we want to also transform the LHS, we see that $y=vx$. By deriving this equation with respect to $x$, we obtain:
+\begin{equation}
+\frac{dy}{dx}=x\frac{dv}{dx}+v
+\end{equation}
+By replacing the above relation in \eqref{midTransform}, we obtain:
+\begin{equation}
+x\frac{dv}{dx}+v = f(v)
+\end{equation}
+
+or 
+\begin{equation}
+\frac{dv}{dx}+\frac{v- f(v)}{x}=0
+\end{equation}
+which is a homogeneous equation!
+
+
+Let's show these concepts through examples.
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Substitution and transformation.}
+Solve the following ODE:
+\begin{equation}
+\frac{dy}{dx}=\left(\frac{x}{y}\right)^2+\frac{y}{x}
+\end{equation}
+Solution: It is clear that the RHS can be written as $F\left(\frac{x}{y}\right)$ or $F\left(\frac{y}{x}\right)$, therefore we can solve the equation by direct integration after a substitution and transformation.
+\begin{enumerate}
+\item Change the dependent variable: let $y/x=v$ or $y=xv$. Now it is important to recall that $v$ is a function of $x$, therefore, when differentiating the substitution with respect to $y$, we have:
+\begin{equation}
+\boxed{\frac{dy}{dx}=x\frac{dv}{dx}+v}
+\end{equation}
+\item  Substitute the above transformation into the original ODE:
+\begin{equation}
+x\frac{dv}{dx}+v = \left(\frac{x}{y}\right)^2+\frac{y}{x} = \left(\frac{1}{v}\right)^2+v = f(v)
+\end{equation}
+ and rearrange:
+\begin{equation}
+\frac{dv}{dx} = \underbrace{\left[f(v)-v\right]}_{G(v)}\underbrace{\frac{1}{x}}_{H(x)}
+\end{equation}
+ Separable equation!
+ 
+ \item Separate and integrate (direct integration)
+\begin{equation}
+\int \frac{dv}{f(v)-v} =\int \frac{1}{x} dx
+\end{equation}
+ The first term is simplified to:
+\begin{equation}
+ \int \frac{1}{f(v)-v}dv = \int \frac{1}{\left(\frac{1}{v^2}+v\right)-v}dv= \int v^2 dv=\frac{v^3}{3}+C_1
+\end{equation}
+\begin{equation}
+\int \frac{1}{x} dx = ln\left|x\right|+C_2
+\end{equation}
+
+\item Substitute $v=y/x$ back into the equation
+\begin{equation}
+ \frac{v^3}{3}=\ln\left|x\right| +C = \frac{\left(\frac{y}{x}\right)^3}{3}=\ln\left|x\right|+C
+\end{equation}
+
+The solution is:
+\begin{equation}
+ y=x \left(3\ln\left|x\right|+D\right)^{1/3} 
+\end{equation}
+\end{enumerate}
+\end{exmp}
+
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Substitution and transformation:}
+Solve the following ODE.
+\begin{equation*}
+\frac{dy}{dx}=\frac{xy+2y^2}{x^2}
+\end{equation*}
+Assuming the initial condition: $y(1)=\frac{1}{2}$.\\
+
+Note: This equation can be made separable as the RHS can be written as $F(y/x)=F(v)$, where $v=y/x$.
+\begin{equation*}
+\frac{dy}{dx}=\frac{y}{x}+2\left(\frac{y}{x}\right)^2= v+2v^2
+\end{equation*}
+
+\textbf{Solution:}
+\begin{enumerate}
+\item Let $v=y/x$, therefore: $\frac{dy}{dx}=x\frac{dv}{dx}+v$
+\item Substitute into the ODE:
+\begin{equation*}
+\frac{dy}{dx}=x\frac{dv}{dx}+v=v+2v^2
+\end{equation*}
+after simplification:
+\begin{equation*}
+\frac{dv}{dx}=2\frac{v^2}{x}
+\end{equation*}
+
+\item Separate and integrate:
+\begin{equation*}
+\int \frac{dv}{v^2}=\int \frac{2}{x}dx
+\end{equation*}
+\begin{equation*}
+-\frac{1}{v}=2 \ln\left|x\right| +C
+\end{equation*}
+or
+\begin{equation*}
+v=\frac{-1}{2 \ln\left|x\right|+C}
+\end{equation*}
+\item Replace original variables: $y=vx$. The general solution is:
+\begin{equation*}
+y=\frac{-x}{2 \ln\left|x\right|+C_2}
+\end{equation*}
+\item Find particular solution. To find the value of $C$, apply the condition at $x=1$ then $y=1/2$, therefore $C=-2$.\\
+Final solution is:
+
+\begin{equation*}
+\boxed{y=\frac{-x}{2 \ln\left|x\right|-2}}\qquad \bLozenge
+\end{equation*}
+
+\end{enumerate}
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+\end{exmp}
+
+
+\begin{exmp}{Other substitutions:}
+Try to solve this simple ODE:
+\begin{equation}
+\left(2x-4y+5\right)y' +x-2y+3=0
+\end{equation}
+\textbf{Solution:}
+There is no clear cut answer about what substitution we can use. With a bit of intuition, we propose to use $v=x-2y$. From this transformation, we can compute the derivative of $y$ with respect to $x$:
+\begin{equation*}
+y'=(1-v')/2
+\end{equation*}
+By substitution, we find:
+\begin{equation}
+\left(2v+5\right)((1-v')/2) +v+3=0
+\end{equation}
+or
+\begin{equation}
+\left(2v+5\right)v' =4v+11
+\end{equation}
+We can now separate the above equation (multiply by 2 and divide by RHS):
+\begin{equation}
+\frac{\left(2v+5\right)}{\left(4v+11\right)}dv  =\frac{4v+11-1}{4v+11}dv=\left(1-\frac{1}{4v+11}\right)dv =2dx
+\end{equation}
+By integration:
+\begin{equation}
+v-\frac{1}{4}\ln\left|4v+11\right|=2x+c
+\end{equation}
+Now we can transform back into our original variables ($v=x-2y$) to find our implicit solution:
+\begin{equation*}
+\boxed{4x+8y+\ln\left|4x-8y+11\right|=c} \qquad \bLozenge
+\end{equation*}
+
+\end{exmp}
+
+\subsection{Bernouilli equation }
+If a first-order equation can be written as:
+\begin{equation}
+\frac{dy}{dx}+P(x)y=Q(x)y^n
+\end{equation}
+(assuming that $P(x)$ and $Q(x)$ are continuous over the interval of interest). We can solve this equation via substitution and transformation using the following substitution:
+\begin{equation}
+v=y^{1-n}
+\end{equation}
+Note that if $n=0$ or 1, we have a linear equation that is more easily solved using the linear equation method (seen a little later).
+
+\updateinfo[September 19, 2018]

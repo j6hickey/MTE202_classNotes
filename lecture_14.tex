@@ -1,0 +1,176 @@
+\chapter*{Lecture 14}
+\begin{recall}{}{}
+\begin{itemize}
+\item Superposition principle, linear independence, Wronskian
+\end{itemize}
+\end{recall}
+
+\section*{ Reduction of order}
+\textbf{Basic idea:} Reduce a 2nd order ODE to a 1st order ODE by introducing a new function $V(x)=\frac{dy}{dx}$.\\
+
+Two main cases are examined:
+\begin{itemize}
+\item Equation with "missing terms" can be directly solved
+\item Know one solution, and we want to find a second linearly independent solution (today)
+\end{itemize}
+
+\subsection{Missing terms}
+Recall the standard form of a 2nd order linear ODE:
+\begin{equation*}
+\boxed{\frac{d^2y}{dx^2} +p(x)\frac{dy}{dx}+ q(x)y =0}
+\end{equation*}
+From this standard three cases can be distinguished:
+\begin{itemize}
+\item missing $p(x)\frac{dy}{dx}$ and $q(x)y$
+\item missing $q(x)y$
+\item missing $p(x)\frac{dy}{dx}$ 
+\end{itemize}
+
+\subsubsection*{General procedure}
+\begin{enumerate}
+\item Introduce $V(x)=\frac{dy}{dx}$
+\item Sub $V(x)$ into the ODE and get a 1st order ODE for $V(x)$
+\item Solve for $V(x)$
+\item Solve for $y$ by integration $y(x)=\int V dx$
+\item[(5)] (if needed) find the particular solution (determine numerical values for the constants)
+\end{enumerate}
+
+\begin{exmp}{Order reduction (missing terms):}\\
+Solve:
+\begin{equation*}
+\frac{d^2y}{dx}+\frac{1}{x}\frac{dy}{dx}=4x
+\end{equation*}
+\textbf{Solution:}\\
+\begin{itemize}
+\item[Step 1] Introduce $V= \frac{dy}{dx}$ which leads to: $\frac{dV}{dx}= \frac{d^2y}{dx^2}$ 
+\item[Step 2]  Sub into the ODE:
+\begin{equation*}
+\frac{dV}{dx^2}+\frac{1}{x}V=4x
+\end{equation*}
+(we now have a nice 1st order ODE)
+\item[Step 3] Solve for $V(x)$ using first order linear ODE formula:
+\begin{equation*}
+p(x)=\frac{1}{x}\qquad \qquad q(x) = 4x
+\end{equation*}
+Compute the integrating factor
+\begin{equation*}
+U(x)=e^{\int p(x) dx}=e^{\int \frac{1}{x} dx}=x
+\end{equation*}
+Solve for $V(x)$:
+\begin{equation*}
+V(x)=\frac{1}{U}\left[\int U q dx + c_1\right]
+\end{equation*}
+\begin{eqnarray*}
+V(x)&=\frac{1}{x}\left[4\int x^2  dx + c_1\right]\\
+&=\frac{1}{x}\left[\frac{4}{3} x^3  + c_1\right]\\
+&=\frac{4}{3} x^2  dx + \frac{c_1}{x}
+\end{eqnarray*}
+\item[Step 4] Solve for $y$:
+\begin{equation*}
+y=\int V(x) dx=\int \frac{4}{3} x^2  dx + \frac{c_1}{x} dx +c_2
+\end{equation*}
+\begin{equation*}
+y= \frac{4}{9} x^3  dx + c_1\ln{(x)} dx +c_2
+\end{equation*}
+\end{itemize}
+\end{exmp}
+
+
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Order reduction (missing term: $dy/dx$):}\\
+Solve:
+\begin{equation*}
+\frac{d^2y}{dx^2}+y=0
+\end{equation*}
+\textbf{Solution:}\\
+\begin{itemize}
+\item[Step 1] Introduce $V= \frac{dy}{dx}$ which leads to: $\frac{dV}{dx}= \frac{d^2y}{dx^2}$ 
+\item[Step 2]  Sub into the ODE:
+\begin{equation}
+\frac{dV}{dx}+y=0
+\label{sepVar_equation}
+\end{equation}
+The above equation has two dependent variables: $V$ and $y$ which are both a function of $x$.\\
+We know that $y=\int Vdx$ but using this relationship would lead to a integro-differential equation.\\
+Trick: Leave $y$ as is and convert the $x$ to $y$.
+\begin{equation*}
+\boxed{\frac{dV}{dx}=\frac{dV}{dy}\frac{dy}{dx}=\frac{dV}{dy} V}
+\end{equation*}
+We sub into \eqref{sepVar_equation}:
+\begin{equation}
+V\frac{dV}{dy}+y=0
+\end{equation}
+which is a separable first-order ODE.
+\item[Step 3] Solve for $V$
+\begin{eqnarray}
+\int V\frac{dV}=-\int y{dy} \\
+\frac{1}{2}V^2=-\frac{1}{2}y^2 +c*_1\\
+V=\pm \sqrt{c_1-y^2}
+\end{eqnarray}
+where $c_1=2c*_1$. We typically select the +/- signed based on a physical constraint of the problem. To illustrate the concept of order reduction, we simply select the positive sign for the rest.
+\item[Step 4] Solve for $y$:
+\begin{equation*}
+\frac{dy}{dx}=V=\sqrt{c_1-y^2}
+\end{equation*}
+Separate and integrate:
+\begin{equation*}
+\int \frac{dy}{\sqrt{c_1-y^2}}=\int dx +c_2
+\end{equation*}
+[Further trick: since $c_1$ can be any constant, we can simply replace $c_1=c^2$ which greatly simplifies the integration of the LHS.]
+\begin{eqnarray*}
+\int \frac{dy}{\sqrt{c^2-y^2}}=arcsin\left(\frac{y}{c}\right)=x+c_2\\
+\boxed{y=c_1\sin(x+c_2)}
+\end{eqnarray*}
+\end{itemize}
+\end{exmp}
+
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\subsection{Obtain a basis if one solution is known. Reduction of Order.}
+Why do we want to do this? For some second-order ODEs, we can guess one solution $y_1$ by simple analysis. It is of interest to find a general basis of the solutions by finding a second, linearly independent solution to the ODE, $y_2$.
+ 
+Basic idea: To get $y_2$, we set $y_2=V(x) y_1(x)$ where $V(x)\neq constant$! Afterwards we substitute $y_2$ and its derivatives in the ODE. 
+
+The derivatives of $y_2$ are (product differentiation!):
+\begin{eqnarray}
+\frac{d y_2}{dx}&=y_1\frac{d V}{dx}+V\frac{d y_1}{dx}\\
+\frac{d^2 y_2}{dx^2}&=y_1\frac{d^2 V}{dx^2}+V\frac{d^2 y_1}{dx^2}+2\frac{d V}{dx}\frac{d y_1}{dx}
+\end{eqnarray}
+
+If we sub into the standard form of a homogeneous second-order ODE:
+\begin{equation*}
+y''+p(x)y'+q(x)y=0
+\end{equation*}
+yields:
+\begin{equation*}
+\left(y_1\frac{d^2 V}{dx^2}+V\frac{d^2 y_1}{dx^2}+2\frac{d V}{dx}\frac{d y_1}{dx}\right)+p(x)\left(y_1\frac{d V}{dx}+V\frac{d y_1}{dx}\right)+q(x)(V y_1)=0
+\end{equation*}
+Collecting the common terms, we obtain:
+\begin{equation*}
+V''y_1+V'\left(2y'_1 + py_1\right) + V\left(y''_1+py_1'+qy_1\right)=0
+\end{equation*}
+
+Since, by construction, $y_1$ is a solution to the ODE, the last term $y''_1+py_1'+qy_1=0$. Therefore, we need to solve the following equation:
+\begin{equation*}
+V'' + V'\frac{2y'_1 + py_1}{y_1} =0
+\end{equation*}
+The above equation can be solved by the method of missing terms!
+
+
+\subsubsection*{General procedure}
+\begin{enumerate}
+\item Introduce $y_2(x)=V(x)y_1(x)$ and compute the first two derivatives
+\item Sub the resulting equations into the ODE and for a homogeneous equation, remove the last term on the LHS.
+\item Solve for $V(x)$ using the order reduction (method of missing terms)
+\item Solve for $y_2$
+\item[(5)]Find the general form of the solution: $y=c_1 y_1+c_2y_2$
+\end{enumerate}
+
+\updateinfo[October 12, 2018]

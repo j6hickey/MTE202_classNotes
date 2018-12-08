@@ -1,0 +1,189 @@
+\documentclass[12pt,twoside]{memoir}
+%\usepackage{createspace}
+%\usepackage[size=pocket,noicc]{createspace}
+%\usepackage[paperwidth=8.5in, paperheight=11in,bindingoffset=.15in]{geometry}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage[latin1]{inputenc}
+\usepackage[british,UKenglish,USenglish,american]{babel}
+\usepackage{tgtermes}
+\usepackage[pdftex]{graphicx}
+\usepackage{multirow}
+\usepackage{setspace}
+\pagestyle{plain}
+\usepackage[table]{xcolor}  
+\usepackage{makecell}   % Bold lines in  table
+\setlength\parindent{0pt}
+\usepackage[framemethod=tikz]{mdframed}
+ \usepackage[many]{tcolorbox}
+ \usepackage{amsthm}
+ \usepackage{amssymb,graphicx}
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[section]
+\newcommand{\bLozenge}{\mathbin{\blacklozenge}}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfopts}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\DeclareMathOperator{\Lapl}{\mathscr{L}}
+\usepackage[makeroom]{cancel}
+\usepackage{xspace}
+\newtcbtheorem[number within=chapter]{testv}{Note}{   
+   outer arc=0pt,
+   arc=0pt,
+   colback=white,
+   colframe=black,
+   colbacktitle=white,
+   titlerule=0pt,
+   fonttitle=\normalcolor\itshape}{thb}
+
+
+\newtcbtheorem[]{recall}{Last lecture}{   
+   outer arc=0pt,
+   arc=2pt,
+   colback=white,
+   colframe=black,
+   colbacktitle=white,
+   titlerule=0pt,
+   fonttitle=\normalcolor\itshape}{thb}
+\usepackage{xcolor}
+\newcommand{\updateinfo}[1][\today]{\par\vfill\hfill{\color{gray}Last updated on #1}}
+
+\newtcbtheorem[number within=chapter]{defin}{Definition}{   
+   outer arc=0pt,
+   arc=0pt,
+   colback=white,
+   colframe=black,
+   colbacktitle=white,
+   titlerule=0pt,
+   fonttitle=\normalcolor\itshape}{thb}
+
+
+
+\usepackage{hyperref}
+%\usepackage{mathpazo}
+\usepackage[protrusion=true,expansion=true]{microtype}
+%\usepackage{type1cm}
+%\usepackage{lettrine}
+\addto\captionsenglish{\renewcommand{\chaptername}{Lecture}}
+%\checkandfixthelayout
+
+% See the ``Memoir customise'' template for some common customisations
+% Don't forget to read the Memoir manual: memman.pdf
+
+%\title{TITLE OF BOOK}
+%\author{NAME OF AUTHOR}
+%\date{} % Delete this line to display the current date
+
+%% BEGIN TITLE
+
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE\raggedleft \@author\par}%
+    \hrulefill\par
+    {\huge\raggedright \@title\par}%
+    \vskip 1cm
+%    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Jean-Pierre Hickey}
+\title{Course Notes: MTE202 - Ordinary Differential Equations\\ {\normalsize Fall 2018}}
+\date{Fall 2018}
+
+
+
+
+
+
+
+
+
+
+%%% BEGIN DOCUMENT
+
+\begin{document}
+
+\let\cleardoublepage\clearpage
+
+
+\maketitle
+
+
+
+
+
+
+\frontmatter
+
+\null\vfill
+
+\begin{flushleft}
+
+
+\bigskip
+
+
+
+
+
+These class notes were developed based on the notes from Prof Carolyn Ren. Many of the examples are taken from Advanced Engineering Mathematics (Kreyszig) and from Ordinary Differential Equations from (Tenenbaum).
+
+
+
+
+\end{flushleft}
+%\let\cleardoublepage\clearpage
+
+\mainmatter
+\sloppy
+
+
+
+\chapter{Introduction}
+\include{lecture_01}
+\include{lecture_02}
+\include{lecture_03}
+\include{lecture_04}
+\include{lecture_05}
+\include{lecture_06}
+\include{lecture_07}
+\include{lecture_08}
+\include{lecture_09}
+\include{lecture_10}
+\include{lecture_11}
+\include{lecture_12}
+\include{lecture_13}
+\include{lecture_14}
+\include{lecture_15}
+\include{lecture_16}
+\include{lecture_17}
+\include{lecture_18}
+\include{lecture_19}
+\include{lecture_20}
+\include{lecture_21}
+\include{lecture_22}
+\include{lecture_23}
+\include{lecture_24}
+\include{lecture_25}
+\include{lecture_26}
+\include{lecture_27}
+\include{lecture_28}
+\include{lecture_29}
+\include{lecture_30}
+\include{lecture_31}
+\include{lecture_32}
+\include{lecture_33}
+\include{lecture_34}
+\include{lecture_35}
+\include{lecture_36}
+\end{document}

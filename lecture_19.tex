@@ -1,0 +1,160 @@
+\chapter*{Lecture 19}
+\begin{recall}{}{}
+\begin{itemize}
+\item Auxiliary equations
+\end{itemize}
+\end{recall}
+
+
+
+
+
+\section{Method of Undetermined Coefficients (MUC)}
+How do we solve non-homogeneous, linear, constant coefficient  equations? 
+
+
+A general solution solution of a nonhomogeneous, linear equation is the sum of:
+\begin{equation}
+\boxed{y_{general}=y_{homogeneous} + y_{particular}}
+\end{equation}
+where $y_\text{homogeneous}$ corresponds to the homogeneous solution (RHS=0), and the $y_\text{particular}$ corresponds to any particular solution to the nonhomogeneous equation.
+
+We note that, despite the common terminology, a  "particular solution" to a second order ODE is slightly different from the "particular solution" previously defined (defined numerical values of the integrative constants).
+
+
+%https://www.khanacademy.org/math/differential-equations/second-order-differential-equations/undetermined-coefficients/v/undetermined-coefficients-3
+
+If we have a second-order, linear constant coefficient ODE of the form:
+\begin{equation*}
+ay''+by'+cy=F(x)
+\end{equation*}
+The homogenous solution satisfies (can be solved via auxiliary equation, order reduction etc):
+\begin{equation*}
+ay_h''+by_h'+cy_h=0
+\end{equation*}
+whereas, the particular solution satisfies:
+\begin{equation*}
+ay_p''+by_p'+cy_p=F(x)
+\end{equation*}
+
+The general solution is the sum of the particular and homogeneous solutions, therefore:
+\begin{equation*}
+a(y_h''+y_p'')+b(y_h'+y_p')+c(y_h+y_p)=F(x)
+\end{equation*}
+or:
+\begin{equation*}
+\underbrace{ay_h''+by_h'+cy_h}_0 + \underbrace{ay_p''+by_p'+cy_p}_{F(x)}=F(x)
+\end{equation*}
+
+
+In other words, the general solution of a second-order, constant-coefficient, nonhomogeneous, linear ODE is:
+\begin{equation}
+y_{general}=y_{h} + y_{p} = c_1y_1+c_2y_2 + y_p
+\end{equation}
+In this section, we propose a method to find the particular solution $y_p$.
+
+
+The Method of Undertermined Coefficient (MUC) is nothing more than a "juditious guess". We will present the method using an example:
+
+\begin{exmp}{MUC:}\\
+Solve the following non-homogeneous equation:
+\begin{equation}
+y''+4y=8x^2
+\end{equation}
+Solution:\\
+We recall that our solution is:
+\begin{equation}
+y_{g}=y_{h} + y_{p} 
+\end{equation}
+\begin{itemize}
+\item Homogeneous solution:
+\textbf{Find} $y_h$\\
+\begin{equation}
+y_h''+4y_h=0
+\end{equation}
+Can be solved via auxiliary equation:
+\begin{equation}
+r^2+4=0
+\end{equation}
+Since $b^2-4ac<0$, we have two imaginary roots. We define:
+\begin{align*}
+\alpha=-b/(2a) = 0\ \qquad \beta=\frac{\sqrt{4ac-b^2}}{2a}=\frac{\sqrt{16}}{2}=2\\
+\end{align*}
+The solutions are:
+\begin{align*}
+y_1=e^\alpha\cos(\beta x)=cos(2x)\\
+y_2=e^\alpha\sin(\beta x)=sin(2x)\\
+\end{align*}
+The homogeneous solution is then:
+\begin{align*}
+y_h=C_1 cos(2x)+C_2 sin(2x)\\
+\end{align*}
+\item Particular solution:
+\textbf{Find} $y_p$:\\
+We have to find a solution $y_p(x)$ such that the combination $y''+4y$ gives us a function of $x$, namely $8x^2$.\\
+We suppose a generic form of the solution to be:
+\begin{equation}
+y(x)= A_2x^2+A_1x+A_0
+\end{equation}
+Therefore: $y(x)''= 2A_2$.
+By substituting into the ODE, we obtain:
+\begin{align*}
+2A_2+4(A_2x^2+A_1x+A_0)=8x^2\\
+4A_2x^2 +4A_1 x+ (2A_2+4A_0)=8x^2 + 0x + 0\\
+\end{align*}
+Therefore, we have: $4A_2=8$, $4A_1=0$, and $2A_2+4A_0=0$. Thus $A_2=2$, $A_1=0$ and $A_0=-1$.
+
+Our particular solution is $y_p=2x^2-1$.
+\end{itemize}
+The general solution is then:
+\begin{align*}
+y_{general}=y_h+y_p=C_1 cos(2x)+C_2 sin(2x) +2x^2-1\\
+\end{align*}
+\end{exmp}
+
+
+\begin{exmp}{MUC:}\\
+Solve the following non-homogeneous equation:
+\begin{equation*}
+y''-3y'-4y=3e^{2x}
+\end{equation*}
+Solution:\\
+
+\begin{equation}
+y_{g}=y_{h} + y_{p} 
+\end{equation}
+\begin{itemize}
+\item Homogeneous solution:
+\begin{equation*}
+y''-3y'-4y=0
+\end{equation*}
+Solve with auxiliary equation:
+\begin{equation*}
+r^2-3r-4= (r-4)(r+1)=0
+\end{equation*}
+We have two real rool: -1 and 4.\\
+The homogeneous solution is:
+\begin{align*}
+y_h=C_1 e^{4x}+C_2 e^{-x}\\
+\end{align*}
+\item Particular solution:
+We guess that our solution looks something like: $y_p=Ae^{2x}$\\
+We compute 
+\begin{align*}
+y'_p=2Ae^{2x} \qquad y''_p=4Ae^{2x}
+\end{align*}
+We sub into our ODE:
+\begin{equation*}
+4Ae^{2x}-3(2Ae^{2x})-4(Ae^{2x})=3e^{2x}
+\end{equation*}
+To satisfy the equation we have $A=-1/2$!
+
+\end{itemize}
+The general solution is then:
+\begin{align*}
+y_{general}=y_h+y_p=C_1 e^{4x}+C_2 e^{-x} - \frac{e^{2x}}{2}
+\end{align*}
+\end{exmp}
+
+
+

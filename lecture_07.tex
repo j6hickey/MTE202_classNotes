@@ -1,0 +1,112 @@
+\chapter*{Lecture 7}
+\begin{recall}{}{}
+\begin{itemize}
+\item integrating factors
+\end{itemize}
+\end{recall}
+
+
+
+
+
+
+
+
+
+\begin{exmp}{Integrating factors:}\\
+Solve:
+\begin{equation*}
+(2\sin(y^2))dx+xy\cos(y^2)dy=0
+\end{equation*}
+With the initial condition $y(2)=\sqrt{\pi/2}$
+
+\textbf{Solution:}
+\begin{enumerate}
+\item Check for exactness: 
+\begin{equation*}
+P=2 \sin(y^2) \qquad \text{and} \qquad Q=xy\cos(y^2)
+\end{equation*}
+and
+\begin{equation*}
+\frac{\partial P}{\partial y}=4y\cos(y^2)\qquad \text{and} \qquad \frac{\partial Q}{\partial x}=y\cos(y^2)
+\end{equation*}
+the equation is NOT exact!
+\item Find the integrating factors (assume $U=U(x)$):
+\begin{equation*}
+R=\frac{1}{Q}\left(\partial P/\partial y-\partial Q/\partial x\right)=\frac{1}{xy\cos(y^2)}\left(4y\cos(y^2)-y\cos(y^2)\right)=\frac{3y}{xy}=\frac{3}{x}
+\end{equation*}
+Therefore:
+
+
+\begin{equation*}
+U(x)=\exp \int R(x)dx=\exp{\int\frac{3}{x}dx} ={x}^3
+\end{equation*}
+(recall: $e^{3\ln\left|x\right|}=x^3$) Our integrating factor is ${x}^3$!
+
+We can re-write the original equation as an exact equation!
+\begin{equation*}
+{x}^3(2\sin(y^2))dx+{x}^4y\cos(y^2)dy=0
+\end{equation*}
+(verify, the exactness!)
+
+\item Solve the exact equation:
+\begin{equation*}
+F(x,y)=\int M dx=  \int (2{x}^3\sin(y^2)) dx+ g(y) =  \frac{1}{2}{x}^4\sin(y^2)) +g(y)
+\end{equation*}
+we derive with respect to $y$ in order to find the term $g(y)$
+\begin{equation*}
+\frac{\partial F(x,y)}{\partial y}= {x}^4y\cos(y^2) +g'(y) = \underbrace{{x}^4y\cos(y^2)}_{N(x,y)}
+\end{equation*}
+Hence:  $g'(y)=0$ and $g(y)=cst$.
+The general solution is then:
+\begin{equation*}
+F(x,y)= \frac{1}{2}{x}^4\sin(y^2) +c
+\end{equation*}
+\item Apply IC: $y(2)=\sqrt{\pi/2}$
+
+\begin{equation*}
+c= \frac{1}{2}{x}^4\sin(y^2) \qquad \text{or}\qquad c= \frac{1}{2}{2}^4\sin(\sqrt{\pi/2})
+\end{equation*}
+
+Particular solution is then:
+\begin{equation*}
+\boxed{{x}^4\sin(y^2) =16}
+\end{equation*}
+\end{enumerate}
+\end{exmp}
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+
+So far, we have assumed that the integrating factor $U$ is a function of $x$. In other words: $U=U(x)$. But we could also consider a case where $U$ depends only on $y$: $U=U(y)$. What is the difference?
+\begin{itemize}
+\item Suppose we assume $U=U(x)$ 
+\begin{equation*}
+\cancel{P(x,y)\frac{\partial U(x)}{\partial y}}+U(x)\frac{\partial P(x,y)}{\partial y}={Q(x,y)\frac{\partial U(x)}{dx}}+U(x)\frac{\partial Q(x,y)}{\partial x}
+\end{equation*}
+After manipulations (recall equation \eqref{chainrule}), we obtain:
+\begin{equation*}
+\boxed{U=\exp\left[\int \frac{1}{Q}\left(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x}\right)  dx\right]}
+\end{equation*}
+
+\item Now suppose we set $U=U(y)$
+\begin{equation*}
+P(x,y)\frac{\partial U(y)}{\partial y}+U(y)\frac{\partial P(x,y)}{\partial y}=\cancel{Q(x,y)\frac{\partial U(y)}{dx}}+U(y)\frac{\partial Q(x,y)}{\partial x}
+\end{equation*}
+A similar manipulation leads to:
+\begin{equation*}
+\boxed{U=\exp\left[\int \frac{1}{P}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) dy\right]}
+\end{equation*}
+\end{itemize}
+
+How to select between $U(x)$ and $U(y)$?
+\begin{itemize}
+\item If $R=(\frac{\partial P}{\partial y}-\frac{\partial Q}{\partial x})/Q$ is \textbf{continuous} and  \textbf{depends only on} $x$, then: \\{\large - select $U(x)$}
+\item If $R=(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y})/P$ is \textbf{continuous} and \textbf{depends only on} $y$, then: \\{\large - select $U(y)$}
+\end{itemize}
+
+
+
+\updateinfo[September 25, 2018]

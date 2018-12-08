@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="990"
+   height="765"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="oscillating.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path4273"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3875">
+      <stop
+         style="stop-color:#e6e6e6;stop-opacity:1;"
+         offset="0"
+         id="stop3877" />
+      <stop
+         style="stop-color:#e6e6e6;stop-opacity:0;"
+         offset="1"
+         id="stop3879" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3875"
+       id="linearGradient3946"
+       gradientUnits="userSpaceOnUse"
+       x1="798.02051"
+       y1="229.11407"
+       x2="798.52557"
+       y2="211.4364"
+       gradientTransform="matrix(1,0,0,1.0384616,0,278.70549)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3875"
+       id="linearGradient4022"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,1.0384616,-430.32498,317.09129)"
+       x1="798.02051"
+       y1="229.11407"
+       x2="798.52557"
+       y2="211.4364" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="425.76406"
+     inkscape:cy="232.1623"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="752"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-287.36218)">
+    <rect
+       y="641.68567"
+       x="290.41891"
+       height="38.890862"
+       width="88.135796"
+       id="rect4001"
+       style="fill:#ffc500;fill-opacity:1;stroke:#ffa100;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <g
+       id="g3815"
+       transform="translate(0.50507627,24.496199)" />
+    <g
+       transform="translate(0.50507627,48.496199)"
+       id="g3821" />
+    <g
+       id="g3831"
+       transform="translate(0.50507627,72.496199)" />
+    <g
+       id="g3948"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMass.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999">
+      <rect
+         y="498.79858"
+         x="673.26666"
+         height="13.63706"
+         width="171.72594"
+         id="rect3865"
+         style="fill:url(#linearGradient3946);fill-opacity:1;stroke:none" />
+      <g
+         transform="translate(-1.5152288,18.687822)"
+         id="g3850">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 674.28571,493.79075 170,0"
+           id="path2985"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 680.33774,206.63818 13.38452,-13.38452"
+           id="path2987"
+           inkscape:connector-curvature="0"
+           transform="translate(0,287.36218)" />
+        <path
+           transform="translate(0,287.36218)"
+           inkscape:connector-curvature="0"
+           id="path2989"
+           d="m 680.33774,206.63818 13.38452,-13.38452"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 704.33774,494.00036 13.38452,-13.38452"
+           id="path2991"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path2993"
+           d="m 724.33774,494.00036 13.38452,-13.38452"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 724.33774,494.00036 13.38452,-13.38452"
+           id="path2995"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path2997"
+           d="m 748.33774,494.00036 13.38452,-13.38452"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path2999"
+           d="m 768.33774,494.00036 13.38452,-13.38452"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 768.33774,494.00036 13.38452,-13.38452"
+           id="path3001"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path3003"
+           d="m 792.33774,494.00036 13.38452,-13.38452"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 812.33774,494.00036 13.38452,-13.38452"
+           id="path3005"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path3007"
+           d="m 812.33774,494.00036 13.38452,-13.38452"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 836.33774,494.00036 13.38452,-13.38452"
+           id="path3009"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         style="fill:none;stroke:#615e5e;stroke-width:0.90069282px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 765.8219,602.89056 c -1.76777,-2.56089 -26.55103,-2.07031 -24.12249,-5.78255 2.42853,-3.71224 44.32477,-6.00977 45.23861,-9.84101 0.91384,-3.83124 -46.37879,-6.64711 -45.23861,-9.73497 1.14018,-3.08786 43.02828,-6.69705 45.23861,-9.73497 -1.1147,-4.15717 -45.63517,-7.06936 -45.23861,-9.73496 1.49069,-3.99346 46.61021,-6.52418 45.23861,-9.73498 -1.3716,-3.2108 -46.81613,-5.92471 -45.49115,-9.93623 1.32498,-4.01153 44.98607,-5.29421 44.98607,-9.93625 0,-4.64204 -45.23861,-6.36409 -45.23861,-9.73497 0,-3.52728 21.47084,-2.80832 23.36488,-5.77895"
+         id="path3846"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="czzzcczzzcc" />
+      <rect
+         y="603.29987"
+         x="720.7439"
+         height="38.890862"
+         width="88.135796"
+         id="rect3848"
+         style="fill:#ffc500;fill-opacity:1;stroke:#ffa100;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
+    <rect
+       y="537.18439"
+       x="242.94168"
+       height="13.63706"
+       width="171.72594"
+       id="rect3969"
+       style="fill:url(#linearGradient4022);fill-opacity:1;stroke:none"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <path
+       style="fill:none;stroke:#615e5e;stroke-width:0.90069282px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 319.49692,641.27636 c -1.76777,-2.56089 -26.55103,-2.07031 -24.12249,-5.78255 2.42853,-3.71224 44.32477,-6.00977 45.23861,-9.84101 0.91384,-3.83124 -46.37879,-6.64711 -45.23861,-9.73497 1.14018,-3.08786 43.02828,-6.69705 45.23861,-9.73497 -1.1147,-4.15717 -45.63517,-7.06936 -45.23861,-9.73496 1.49069,-3.99346 46.61021,-6.52418 45.23861,-9.73498 -1.3716,-3.2108 -46.81613,-5.92471 -45.49115,-9.93623 1.32498,-4.01153 44.98607,-5.29421 44.98607,-9.93625 0,-4.64204 -45.23861,-6.36409 -45.23861,-9.73497 0,-3.52728 21.47084,-2.80832 23.36488,-5.77895"
+       id="path3999"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czzzcczzzcc"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <path
+       style="fill:none;stroke:#524f4f;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 362.14286,263.48477 0,54.05855"
+       id="path4024"
+       inkscape:connector-curvature="0"
+       transform="translate(0,287.36218)"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <path
+       style="fill:none;stroke:#524f4f;stroke-width:0.95883101px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 344.76955,622.00503 0,-17.14285 35.46091,0 0,17.14285"
+       id="path4026"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <path
+       style="fill:none;stroke:#524f4f;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 348.60362,611.70108 27.27412,0"
+       id="path4028"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <path
+       style="fill:none;stroke:#524f4f;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 361.23469,611.75249 0,29.28572"
+       id="path4030"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <g
+       transform="translate(-431.84021,57.073619)"
+       id="g3971"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 674.28571,493.79075 170,0"
+         id="path3973"
+         inkscape:connector-curvature="0" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 680.33774,206.63818 13.38452,-13.38452"
+         id="path3975"
+         inkscape:connector-curvature="0"
+         transform="translate(0,287.36218)" />
+      <path
+         transform="translate(0,287.36218)"
+         inkscape:connector-curvature="0"
+         id="path3977"
+         d="m 680.33774,206.63818 13.38452,-13.38452"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 704.33774,494.00036 13.38452,-13.38452"
+         id="path3979"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3981"
+         d="m 724.33774,494.00036 13.38452,-13.38452"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 724.33774,494.00036 13.38452,-13.38452"
+         id="path3983"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3985"
+         d="m 748.33774,494.00036 13.38452,-13.38452"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3987"
+         d="m 768.33774,494.00036 13.38452,-13.38452"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 768.33774,494.00036 13.38452,-13.38452"
+         id="path3989"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3991"
+         d="m 792.33774,494.00036 13.38452,-13.38452"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 812.33774,494.00036 13.38452,-13.38452"
+         id="path3993"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3995"
+         d="m 812.33774,494.00036 13.38452,-13.38452"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 836.33774,494.00036 13.38452,-13.38452"
+         id="path3997"
+         inkscape:connector-curvature="0" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:28.59643364000000076px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+       x="322.59088"
+       y="668.50018"
+       id="text4032"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999"><tspan
+         sodipodi:role="line"
+         id="tspan4034"
+         x="322.59088"
+         y="668.50018"
+         style="-inkscape-font-specification:arial;font-family:arial;fill:#800000">m</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4036"
+       y="605.64307"
+       x="278.30515"
+       style="font-size:28.59643364px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999"><tspan
+         y="605.64307"
+         x="278.30515"
+         id="tspan4038"
+         sodipodi:role="line"
+         style="fill:#666666;font-family:arial;-inkscape-font-specification:arial">k</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28.59643364px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+       x="369.7337"
+       y="597.78595"
+       id="text4044"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999"><tspan
+         style="fill:#666666;font-family:arial;-inkscape-font-specification:arial"
+         sodipodi:role="line"
+         id="tspan4046"
+         x="369.7337"
+         y="597.78595">c</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4048"
+       y="630.64307"
+       x="754.01947"
+       style="font-size:28.59643364px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMass.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999"><tspan
+         style="fill:#800000;font-family:arial;-inkscape-font-specification:arial"
+         y="630.64307"
+         x="754.01947"
+         id="tspan4050"
+         sodipodi:role="line">m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:28.59643364px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+       x="717.7337"
+       y="567.78595"
+       id="text4052"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMass.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999"><tspan
+         style="fill:#666666;font-family:arial;-inkscape-font-specification:arial"
+         sodipodi:role="line"
+         id="tspan4054"
+         x="717.7337"
+         y="567.78595">k</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 249.28571,372.14286 23.57143,0"
+       id="path3240"
+       inkscape:connector-curvature="0"
+       transform="translate(0,287.36218)"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="m 260.71428,372.85715 0,21.42857"
+       id="path3242"
+       inkscape:connector-curvature="0"
+       transform="translate(0,287.36218)"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <text
+       inkscape:export-ydpi="271.35999"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMassDamper.png"
+       xml:space="preserve"
+       style="font-size:28.59643364px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+       x="266.87659"
+       y="679.21448"
+       id="text4461"
+       sodipodi:linespacing="125%"><tspan
+         style="fill:#000000;font-family:arial;-inkscape-font-specification:arial"
+         sodipodi:role="line"
+         id="tspan4463"
+         x="266.87659"
+         y="679.21448">y</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4465"
+       d="m 683.57142,618.07647 23.57143,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMass.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4467"
+       d="m 694.99999,618.79076 0,21.42857"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMass.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4469"
+       y="637.78589"
+       x="701.16229"
+       style="font-size:28.59643364px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;font-family:Comic Sans MS;-inkscape-font-specification:Comic Sans MS"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/jean-pierrehickey/Documents/Work/Teaching/ME303_Spring16/slides/lecture_04/figs/OscillatingMass.png"
+       inkscape:export-xdpi="271.35999"
+       inkscape:export-ydpi="271.35999"><tspan
+         y="637.78589"
+         x="701.16229"
+         id="tspan4471"
+         sodipodi:role="line"
+         style="fill:#000000;font-family:arial;-inkscape-font-specification:arial">y</tspan></text>
+  </g>
+</svg>

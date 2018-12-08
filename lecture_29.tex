@@ -1,0 +1,108 @@
+
+\chapter*{Lecture 29}
+
+\begin{recall}{}{}
+\begin{itemize}
+\item \url{http://evaluate.uwaterloo.ca/}
+\item Course evaluation today at about 2pm.
+\item Existance of LT
+\begin{itemize}
+\item Pieceqise continuous
+\item Exponential order
+\end{itemize}
+\item Linearity of the transform
+\end{itemize}
+\end{recall}
+
+\subsection*{Recalls:}
+\begin{itemize}
+\item \textbf{Exponential order remark:} if $f(t)$ is of exponential order, we said:
+\begin{equation*}
+\left|f(t)\right|\leq M e^{\alpha t} \qquad \qquad \text{for } t>T
+\end{equation*}
+By multiplying both sides by  $e^{-\alpha t}$, the above equation is equivalent to:
+\begin{equation*}
+e^{-\alpha t}\left|f(t)\right|\leq M \qquad \qquad \text{for } t>T
+\end{equation*}
+In other words, we are saying that the product $e^{-\alpha t} \left|f(t)\right|$ is bounded (corresponds to our integrand in the Laplace transform) for the range of $t$ of interest.
+
+If $f(t)=e^{t^2}$, find the exponential order?
+
+\begin{equation*}
+e^{-\alpha t}\left|f(t) \right|=e^{-\alpha t}e^{t^2}=e^{t^2-\alpha t} \leq ?  \end{equation*}
+
+when $t\rightarrow \infty$ the LHS also goes to $\infty$. Therefore $e^{t^2}$ is not of exponential order!
+
+\item \textbf{Improper integrals:} It is important to recall that we are dealing with {improper integrals}. Therefore, for exactness, we should be solving:
+\begin{equation}
+\int^\infty_0 e^{-st} f(t) dt=\lim_{n \rightarrow \infty} \int^N_0 e^{-st} f(t) dt
+\end{equation}
+\end{itemize}
+
+
+\subsection{Translation in s}
+If the Laplace transform $\Lapl (f)=F(s)$ exists for $s>\alpha$, then:
+\begin{equation}
+\Lapl (e^{at}f)= F(s-a)
+\end{equation}
+for $s>\alpha+a$.
+
+This property can be proven by computing the Laplacian:
+\begin{align*}
+\Lapl (e^{at}f)&= \int^\infty_0 e^{-st}e^{at}f(t) dt\\
+&= \int^\infty_0 e^{(a-s)t}f(t) dt\\
+&=F(s-a)
+\end{align*}
+
+
+\subsection{Laplace transform of derivatives}
+The usefulness of LT will soon become apparent!
+\begin{align*}
+\Lapl (f')&= \underbrace{\int^\infty_0 e^{-st}\frac{df(t)}{dt} dt}_{\text{integration by parts}}\\
+\end{align*}
+We define an integration by parts with $u=e^{-st}$ and $dv=f'dt$
+\begin{align*}
+\Lapl (f')&= \left. \underbrace{e^{-st}f(t)}_\text{need exp. order cond}\right|^\infty_0+\left. s\int^\infty_0e^{-st}f(t) dt\right|^\infty_0\\
+&=0 -f(0) + s\underbrace{\left. \int^\infty_0e^{-st}f(t) dt\right|^\infty_0}_{\Lapl(f)}
+\end{align*}
+Therefore:
+\begin{align*}
+\boxed{\Lapl \left(f'(t)\right)= s\Lapl(f)-f(0)}
+\end{align*}
+where $f(0)$ is the initial condition of the problem!
+
+
+Similarly:
+\begin{align*}
+\boxed{\Lapl \left(f''(t)\right)= s^2F(s)-s f(0)-f'(0)}
+\end{align*}
+[I invite you to derive this last equation by yourself at home]
+
+\begin{exmp}{LT ODE :}\\
+Consider the following ODE:
+\begin{align*}
+f''+2f'+f=0 \qquad \qquad \text{with } &f(0)=1; \\
+&f'(0)=0
+\end{align*}
+Find $\Lapl(f'')$.
+
+\textbf{Solution}\\
+Take the LT of both sides:
+\begin{align*}
+\qquad & \Lapl(f''+2f'+f)=\Lapl(0)\\
+&=\Lapl(f'')+2\Lapl(f')+\Lapl(f) \qquad \text{(principle of linearity)}\\
+&=\underbrace{s^2 F(s) - sf(0)-f'(0)} +2\left(\underbrace{sF(s) - f(0)}\right) +F(s)\\
+&(s^2+2s+1)F(s)-(s+2)f(0)-f'(0)=(s^2+2s+1)F(s)-(s+2)1-0\\
+\end{align*}
+Therefore:
+\begin{align*}
+F(s)=\frac{s+2}{(s+1)^2}
+\end{align*}
+
+Now, we can find $\Lapl(f'')$:
+\begin{align*}
+\Lapl \left(f''\right)&= s^2F(s)-s f(0)-f'(0) = s^2 \frac{s+2}{(s+1)^2}-s(1)-0\\
+&s^2\frac{s+2}{(s+1)^2} -s=\\
+&\boxed{\frac{-s}{(s+1)^2}}
+\end{align*}
+\end{exmp}

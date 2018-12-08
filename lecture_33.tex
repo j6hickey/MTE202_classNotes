@@ -1,0 +1,151 @@
+
+\chapter*{Lecture 33}
+
+\begin{recall}{}{}
+\begin{itemize}
+\item Method of partial fraction 
+(quadratic factors)
+\end{itemize}
+\end{recall}
+
+
+
+
+
+\textbf{last lecture}
+
+How did we do this jump?
+\begin{equation*}
+F(s)=\frac{\frac{s}{2}}{s^2+s+\frac{3}{4}}=\frac{E(s+\frac{1}{2}) + D\frac{\sqrt{2}}{2}}{(s+\frac{1}{2})^2+(\frac{\sqrt{2}}{2})^2}
+\end{equation*}
+
+We recall that we want to obtain:
+\begin{align*}
+&\Lapl^{-1}\left[\frac{s-a}{(s-a)^2+b^2}\right]=e^{at}\cos(bt)\\
+&\qquad \text{and}\\
+&\Lapl^{-1}\left[\frac{b}{(s-a)^2+b^2}\right]=e^{at}\sin(bt)
+\end{align*}
+
+
+
+
+\subsection{Translation in s}
+If the Laplace transform $\Lapl (f)=F(s)$ exists for $s>\alpha$, then:
+\begin{equation}
+\Lapl (e^{at}f)= F(s-a)
+\end{equation}
+for $s>\alpha+a$.
+
+This property can be proven by computing the Laplacian:
+\begin{align*}
+\Lapl (e^{at}f)&= \int^\infty_0 e^{-st}e^{at}f(t) dt\\
+&= \int^\infty_0 e^{(a-s)t}f(t) dt\\
+&=F(s-a)
+\end{align*}
+
+
+
+\subsection{Convolution}
+Let $f(t)$ and $g(t)$ satisfy the existance theorem. Then, the product of their transform $F(s)=\Lapl(f)$ amd $G(s)=\Lapl(g)$ is the transform $H(s)=\Lapl(h)$ of the \textbf{convolution} of $f(t)$ and $g(t)$:
+\begin{align*}
+h(t) = (f*g)(t) = \int^t_0 f(\tau)g(t-\tau) d\tau
+\end{align*}
+
+
+\begin{exmp}{Convolution}{}
+Find the inverse of:
+\begin{align*}
+H(s)=\frac{1}{(s^2+1)^2}=\frac{1}{s^2+1}\cdot \frac{1}{s^2+1}
+\end{align*}
+\textbf{Solution}\\
+We know that each factor on the right has the inverse $\sin t$. Therefore:\begin{align*}
+h(t)&=\Lapl^{-1}(H)=\sin t * \sin t  \\
+&=\int^t_0 \sin \tau \sin (t-\tau)d\tau\\
+\end{align*}
+Trigonometric identify:
+\begin{align*}
+\sin x\sin y = \frac{1}{2}\left[\cos(x-y)-\cos(x+y)\right]
+\end{align*}
+We write:
+\begin{align*}
+\sin \underbrace{\tau}_x \sin \underbrace{(t-\tau)}_y =  \frac{1}{2}\left[\cos(2\tau-t)-\cos(t)\right]
+\end{align*}
+
+\begin{align*}
+h(t)&=\Lapl^{-1}(H)=\sin t * \sin t\\
+&=\int^t_0 \sin \tau \sin (t-\tau)d\tau\\
+&= -\frac{1}{2}t\cos t+\frac{1}{2}\sin t
+\end{align*}
+
+\end{exmp}
+
+
+
+\subsection{Treatment of discontinuous functions}
+Convert discontinuous functions expressed over individual subdomains into a single function using the Heaviside step function.
+
+\begin{equation*}
+H(t)=
+\begin{cases}
+0 \qquad \qquad &t<0\\
+1 &t\geq 0
+\end{cases}
+\end{equation*}
+
+Alternatively (using translation):
+\begin{equation*}
+H(t-a)=
+\begin{cases}
+0 \qquad \qquad &t<a\\
+1 &t\geq a
+\end{cases}
+\end{equation*}
+Or by modifying the amplitude:
+
+Alternatively (using translation):
+\begin{equation*}
+MH(t-a)=
+\begin{cases}
+0 \qquad \qquad &t<a\\
+M &t \geq a
+\end{cases}
+\end{equation*}
+
+$H(t)$ is used as a building block to convert piecewise continuous functions into a single function.
+
+\begin{exmp}{}
+Use the Heaviside function to transform:
+\begin{equation*}
+y(t)=
+\begin{cases}
+0 \qquad \qquad &t\leq 1\\
+5 &1<t \leq2\\
+0&t>2
+\end{cases}
+\end{equation*}
+\textbf{Solution:}\\
+Let: $y_1(t)=5H(t-1)$ and $y_2=5H(t-2)$, then: $y(t)=y_1(t)-y_2(t)=5\left[H(t-1)-H(t-2)\right]$
+\end{exmp}
+
+
+
+\begin{exmp}{}
+Use the Heaviside function to transform:
+\begin{equation*}
+f(t)=
+\begin{cases}
+2+t^2 \qquad \qquad &t\leq 2\\
+6 &2 < t\leq 3\\
+\frac{2}{2t-5}&3<t< \infty
+\end{cases}
+\end{equation*}
+\textbf{Solution:}\\
+\begin{align*}
+f(t)&=(2+t^2)\left[H(t-0)-H(t-2)\right]\\
+ &+6\left[H(t-2)-H(t-3)\right]\\
+ &+\frac{2}{2t-5}\left[H(t-3)\right]
+\end{align*}
+
+\end{exmp}
+
+

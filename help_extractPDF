@@ -1,0 +1,1 @@
+pdftk ClassNotes_MTE202.pdf cat 43-47 output ClassNotes_MTE202_lecture_01.pdf

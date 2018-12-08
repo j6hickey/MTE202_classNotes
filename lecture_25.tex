@@ -1,0 +1,183 @@
+\chapter*{Lecture 25}
+\begin{recall}{}{}
+\begin{itemize}
+\item Forced Vibration
+\end{itemize}
+\end{recall}
+
+
+
+
+\subsubsection{Solving force-vibrations ODEs}
+\begin{itemize}
+\item[Step 1] The ODE is: 2nd-order, constant coefficient, non-homogeneous (since we have a forcing term).
+
+Important to select the appropriate solution method:
+\begin{itemize}
+\item Reduction of order
+\item Auxiliairy equations
+\item Method of undetermined coefficients
+\item Variation of parameters 
+\end{itemize}
+Since we have a non-homogeneous equation, we general select between:
+\begin{itemize}
+\item Method of undetermined coefficients if: $F(t)$ has the form of an exponential, sin/cos, polynomial, or combination of the above functions.
+\item Variation of parameters: if the homogeneous solution is known. In other words, if the homogeneous solution (free vibration case is known).
+\end{itemize}
+\item[Step 2] Solve for the homogeneous case (if it is not already known). Identify if the solution is:
+\begin{itemize}
+\item over-damped
+\item critically damped
+\item under-damped
+\end{itemize}
+\item[Step 3] Solve the non-homogeneous equations with $F(t)$.
+\end{itemize}
+
+
+
+
+\begin{exmp}{Forced-vibrations:}\\
+Solve a spring-mass-damper system with $F(t)=F_0\cos(\omega t)$ where $F_0$ and $\omega$ are constants.
+
+\textbf{Solution:}
+We solve the problem using MUC.\\
+By looking up in the table, we find:
+\begin{itemize}
+\item $x_p = A\sin(\omega t)+B\cos(\omega t)$
+\item $x'_p = A\omega\cos(\omega t)-B\omega\sin(\omega t)$
+\item $x''_p = -A\omega^2\sin(\omega t)-B\omega^2\cos(\omega t)$\\
+$x''_p=-\omega^2\left[A\sin(\omega t)+B\cos(\omega t)\right]$\\
+$x''_p=-\omega^2x_p$\\
+\end{itemize}
+Sub into the ODE:
+\begin{equation*}
+m\left(-\omega^2x_p\right)+c\left(A\omega\cos(\omega t)-B\omega\sin(\omega t)\right) +kx_p = F_0\cos(\omega t)
+\end{equation*}
+We rearrange:
+\begin{align*}
+&\left(k-m\omega^2\right)\left[A\sin(\omega t)+B\cos(\omega t)\right]+c\omega\left(A\cos(\omega t)-B\sin(\omega t)\right) = F_0\cos(\omega t)\\
+&\left(k-m\omega^2\right)x_p+c\omega\left(A\cos(\omega t)-B\sin(\omega t)\right)  = F_0\cos(\omega t)
+\end{align*}
+Sort by sine/cos:
+\begin{align*}
+&\left[A\left(k-m\omega^2\right)-B c\omega\right]\sin(\omega t) \\
+&\qquad +\left[B\left(k-m\omega^2\right)+Ac\omega\right]\cos(\omega t)  = F_0\cos(\omega t)
+\end{align*}
+
+We have the following two equations:
+\begin{itemize}
+\item $A\left(k-m\omega^2\right)-B c\omega =0$
+\item $B\left(k-m\omega^2\right)+Ac\omega=F_0$
+\end{itemize}
+Solving the equations, we obtain:
+\begin{align*}
+&A=\frac{F_0 c\omega}{(k-m\omega^2)^2+c^2\omega^2}\\
+&B=\frac{F_0 (k-m\omega^2)}{(k-m\omega^2)^2+c^2\omega^2}
+\end{align*}
+
+We can sub the constants into the proposed solution and rearranging:
+\begin{equation*}
+x_p=\frac{F_0 }{(k-m\omega^2)^2+c^2\omega^2}\left[c\omega \sin(\omega t)+(k-m\omega^2)\cos(\omega t)\right]
+\end{equation*}
+Can be re-written into the form $Esin(\omega t+\phi)$. Recall:
+\begin{align*}
+x_p=\underbrace{E\sin(\phi)}_{c_1} \cos(\omega t)+\underbrace{E\cos(\phi)}_{c_2} \sin(\omega t)
+\end{align*}
+We can write:
+\begin{itemize}
+\item $E\sin(\phi)=(k-m\omega^2)$
+\item $Ecos(\phi)=c\omega$
+\end{itemize}
+two equations, two unknowns ($E$ and $\phi$)
+
+Where $\phi=arctan\left(\frac{k-m\omega^2}{c \omega}\right)$ and $E=\sqrt{c^2\omega^2+(k-m\omega^2)^2}$\\
+The solution can take the form:
+\begin{equation*}
+x_p=\frac{F_0 }{\sqrt{(k-m\omega^2)^2+c^2\omega^2}}\sin\left(\omega t + \phi \right)
+\end{equation*}
+where $\omega$ is the natural frequency, $\phi$ the phase angle and the coefficient in front of the sine the amplitude.
+\end{exmp}
+
+
+
+Let's suppose that the system has no damping.
+\begin{equation*}
+x_p=\frac{F_0 }{{(k-m\omega^2)}}\sin\left(\omega t + \phi \right)=\frac{F_0 }{{m(\frac{k}{m}-\omega^2)}}\sin\left(\omega t + \phi \right)=\frac{F_0 }{{m(\omega^2_0-\omega^2)}}\sin\left(\omega t + \phi \right)
+\end{equation*}
+
+where $\omega_0/2\pi = \frac{\sqrt{k}}{2\sqrt{m}\pi}$ is the natural frequency of the system and $\omega$ forced frequency of the system. When both frequencies match, we have \textbf{resonance} of the system.
+
+
+%
+%\subsection{Gaussian elimination}
+%For a system of 1st order ODEs:
+%\begin{align*}
+%a_1x'+a_2x+a_3y'+a_4y=f_1\\
+%a_5x'+a_6x+a_7y'+a_8y=f_2
+%\end{align*}
+%We introduce the differential operator:
+%\begin{align*}
+%D=\frac{d}{dt}\qquad D^2=\frac{d^2}{dt^2}\\
+%e.g. D(y) = \frac{dy}{dt} \qquad or D \cdot D(y) = \frac{d}{dt}\frac{dy}{dt}=\frac{d^2y}{dt^2}=D^2(y)
+%\end{align*}
+%We can rewrite the equation with the operators:
+%\begin{align*}
+%a_1D(x)+a_2x+a_3D(y)+a_4y=f_1\\
+%a_5D(x)+a_6x+a_7D(y)+a_8y=f_2
+%\end{align*}
+%or:
+%
+%\begin{align*}
+%(a_1D+a_2)[x]+(a_3D+a_4)[y]=f_1\\
+%(a_5D+a_6)[x]+(a_7D+a_8)[y]=f_2
+%\end{align*}
+%The above equation can be solved by elimination!
+%
+%
+%\begin{exmp}{Gaussian elimination: system of ODEs}\\
+%Consider:
+%\begin{align*}
+%x'-3x+4y=1\\
+%y'-4x+7y=10t
+%\end{align*}
+%where $x$ and $y$ are dependent variables and $t$ is the independent variable.
+%
+%\textbf{Solution:}\\
+%Rewrite the equation with operator notation:
+%\begin{align*}
+%(D-3)[x]+4[y]=1\\
+%-4[x]+(D+7)[y]=10[t]
+%\end{align*}
+%Use elimination technique to get rid of $x$:\\
+%(1) x 4+ (2)x$(D-3)$\\
+%\begin{align*}
+%16 [y] +(D+7)(D-3)[y]=4+(D-3)10[t]
+%\end{align*}
+%We evaluate the RHS:
+%\begin{align*}
+%4+(D-3)10[t]=4+(\frac{d}{dt}-3)10[t]=4+(\frac{d[10[t]]}{dt}-30[t])=14-30[t]
+%\end{align*}
+%We evaluate the LHS:
+%\begin{align*}
+%16 [y] +(D+7)(D-3)[y]=16 [y] +(D^2+4D-21)[y]=(D^2+4D-5)[y]=\frac{d^2y}{dt^2}+4\frac{dy}{dt}-5y
+%\end{align*}
+%We combine both equations:
+%\begin{align*}
+%\boxed{\frac{d^2y}{dt^2}+4\frac{dy}{dt}-5y=14-30[t]}
+%\end{align*}
+%Now we have a second-order ODE for $y$ which can be solved via MUC!\\
+%General solution of $y(t)$:
+%\begin{align*}
+%y_g=C_1e^{-5t}+c_2e^t+6t+2
+%\end{align*}
+%Now we can solve for $x$. From this equation:
+%\begin{align*}
+%-4[x]+(D+7)[y]=10[t]\\
+%4[x]=\frac{d}{dt}y-7y-10[t]
+%\end{align*}
+%
+%From the general solution of $y$, we know the derivative.
+
+
+%\end{exmp}
+

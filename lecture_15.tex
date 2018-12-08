@@ -1,0 +1,172 @@
+\chapter*{Lecture 15}
+\begin{recall}{}{}
+\begin{itemize}
+\item Reduction of order technique
+\begin{itemize}
+\item missing terms
+\item find second solution
+\end{itemize}
+\end{itemize}
+\end{recall}
+
+
+\subsubsection*{General procedure}
+\begin{enumerate}
+\item Introduce $y_2(x)=V(x)y_1(x)$ and compute the first two derivatives
+\item Sub the resulting equations into the ODE and for a homogeneous equation, remove the last term on the LHS.
+\item Solve for $V(x)$ using the order reduction (method of missing terms)
+\item Solve for $y_2$
+\item[(5)]Find the general form of the solution: $y=c_1 y_1+c_2y_2$
+\end{enumerate}
+
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Order reduction (find second solution):}\\
+Solve:
+\begin{equation*}
+\frac{d^2y}{dx^2}+4\frac{dy}{dx} + 6y=0
+\label{originalODE}
+\end{equation*}
+knowing that $y_1=e^{-3x}$. Find $y_2$.
+\clearpage
+\textbf{Solution:}
+\begin{itemize}
+\item[Step 1] Introduce $y_2=Vy_1= Ve^{-3x}$ and compute derivatives:
+\begin{equation*}
+\frac{dy_2}{dx}=-3 Ve^{-3x}+e^{-3x}\frac{dV}{dx}
+\end{equation*}
+
+\begin{equation*}
+\frac{d^2y_2}{dx^2}=9 Ve^{-3x} +  e^{-3x}\frac{d^2V}{dx^2}-6e^{-3x}\frac{dV}{dx}
+\end{equation*}
+We replace in the original ODE \eqref{originalODE}:
+\begin{equation*}
+\underbrace{9 Ve^{-3x} +  e^{-3x}\frac{d^2V}{dx^2}-6e^{-3x}\frac{dV}{dx}}_{\frac{d^2y}{dx^2}}+4\left(\underbrace{-3 Ve^{-3x}+e^{-3x}\frac{dV}{dx}}_{\frac{dy}{dx}}\right) + 3\underbrace{Ve^{-3x}}_y=0
+\end{equation*}
+
+After a number of algebraic simplifications, we end up with:
+
+\begin{equation*}
+\boxed{\frac{d^2V}{dx^2}-2\frac{dV}{dx}=0}
+\label{tempsODE}
+\end{equation*}
+\item[Step 3] Solve for $V$. Let $W=\frac{dV}{dx}$  and $\frac{dW}{dx}=\frac{d^2V}{dx^2}$  and sub into \eqref{tempsODE}:
+\begin{equation*}
+\frac{dW}{dx}-2W=0
+\end{equation*}
+and solve for $W$:
+\begin{equation*}
+\int \frac{1}{W}dW=\int2 dx+c_1 \qquad \qquad W=c_1e^{2x}
+\end{equation*}
+Transform back into $V$:
+\begin{equation}
+V=\int W dW+c_2=\int c_1 e^{2x}dx +c_2 \qquad \qquad V=c_1e^{2x}+c_2
+\end{equation}
+\item[Step 4] Solve for $y_2$:
+\begin{equation}
+y_2 = V(x) y_1 = (c_1e^{2x}+c_2)y_1
+\end{equation}
+
+QUESTION: Are the solutions linearly independent????
+What if $c_1=0$? The solutions are not-independent!
+\item[Step 5] Find the general form of the solution.\\
+The general form of the solution of a linear, homogeneous second-order ODE looks like:
+\begin{equation*}
+y_{general}=Ay_1+By_2
+\end{equation*}
+We can therefore write our solution as:
+\begin{equation*}
+y_{general}=Ay_1+B(c_1e^{2x}+c_2)y_1
+\end{equation*}
+or:
+\begin{equation*}
+y_{general}=Ay_1+Bc_1e^{2x}y_1+Bc_2y_1 = \underbrace{(A+Bc_2)}_C y_1+\underbrace{Bc_1}_De^{2x}y_1
+\end{equation*}
+\begin{equation*}
+y_{general}=C y_1+De^{2x}y_1 = Cy_1+Dy_2
+\end{equation*}
+Therefore, $y_1=e^{-3x}$ (given by the problem) and $y_2=e^{2x}y_1=e^{-x}$.
+ At this point, it is not a bad idea to check the linear independence of our solution basis:
+ \begin{equation*}
+W(y_1,y_2)=\left|\begin{bmatrix}
+    y_1 & y_2  \\
+    y'_1 & y'_2
+  \end{bmatrix}\right| = y_1y'_2 -y'_1y_2 
+\end{equation*}
+ \begin{equation*}
+ = e^{-3x}(-e^{-x})-(-3)e^{-3x}e^{-x}=2e^{-4x}\neq 0
+ \end{equation*}
+ 
+ $y_1$ and  $y_2$  are linearly independent. So our answer is:
+ \begin{equation*}
+\boxed{y_{2}=e^{-x}}
+\end{equation*}
+\end{itemize}
+
+\end{exmp}
+
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Order reduction (find second solution):}\\
+Solve:
+\begin{equation}
+9\frac{d^2y}{dx^2}-6\frac{dy}{dx} + y=0
+\end{equation}
+
+knowing $y_1=e^{1/3 x}$ find $y_2$ and $y_{general}$.\\
+\textbf{Solution:}
+\begin{itemize}
+\item[Step 1] Introduce $y_2=Vy_1=Ve^{1/3 x}$:
+\begin{equation*}
+\frac{dy_2}{dx}=1/3 Ve^{1/3x}+e^{1/3x}\frac{dV}{dx}
+\end{equation*}
+
+\begin{equation*}
+\frac{d^2y_2}{dx^2}=1/9 Ve^{1/3x} +  e^{1/3x}\frac{d^2V}{dx^2}+2/3 e^{1/3x} \frac{dV}{dx}
+\end{equation*}
+\item[Step 2] Sub into the ODE:
+[Steps on the board]
+
+\item[Step 3] Solve for $V$.
+\begin{equation*}
+{9\frac{d^2V}{dx^2}=0} \qquad \boxed{\frac{d^2V}{dx^2}=0}
+\end{equation*}
+or :
+\begin{equation*}
+V(x)=c_1x+c_2
+\end{equation*}
+\item[Step 4] Solve for $y_2$:
+\begin{equation*}
+y_2(x)=Vy_1=(c_1x+c_2)e^{1/3x}
+\end{equation*}
+\item[Step 5] Find the general form of the solution.\\
+\begin{equation*}
+y_{general} = Ay_1+By_2=Ae^{1/3x} +B(c_1x+c_2)e^{1/3x}=(A+Bc_2)e^{1/3x}+Bc_1e^{1/3x}
+\end{equation*}
+This yields:
+\begin{equation*}
+\boxed{y_2= xy_1 = xe^{1/3x}}
+\end{equation*}
+Our general solution is:
+\begin{equation*}
+\boxed{y_{general} = Cy_1+Dy_2=Ce^{1/3x}+Dxe^{1/3x}}
+\end{equation*}
+
+Check linear independence! (Wronskian)
+\end{itemize}
+
+\end{exmp}
+
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+
+

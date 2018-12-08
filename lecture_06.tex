@@ -1,0 +1,185 @@
+\chapter*{Lecture 6}
+\begin{recall}{}{}
+\begin{itemize}
+\item Exact Equations
+\end{itemize}
+\end{recall}
+
+\begin{exmp}{}
+Solve:
+\begin{equation*}
+\frac{dy}{dx}=-\frac{y\cos(x)+2xe^{y}}{\sin(x)+x^{2}e^{y}-1}
+\end{equation*}
+Exact equation?
+\begin{enumerate}
+\item Reformulate
+\begin{equation*}
+\underbrace{(y\cos(x)+2xe^{y})}_{M(x,y)}{dx}+\underbrace{(\sin(x)+x^{2}e^{y}-1)}_{N(x,y)}dy=0
+\end{equation*}
+\item  check the compatibility equation:
+\begin{equation*}
+\frac{\partial M(x,y)}{\partial y}=(\cos(x)+2xe^{y}) \qquad \text{and}\qquad \frac{\partial N(x,y)}{\partial x}=(\cos(x)+2xe^{y}) 
+\end{equation*}
+It is Exact!
+\item  we have a total derivative of a function $f(x,y)$:
+\begin{equation*}
+M(x,y) = \frac{\partial f(x,y)}{\partial x}=y\cos(x)+2xe^{y}
+\end{equation*}
+
+By integrating to find $f(x,y)$
+\begin{equation*}
+ \frac{\partial f(x,y)}{\partial x}=y\cos(x)+2xe^{y}
+\end{equation*}
+
+\begin{equation*}
+ f(x,y)=\int (y\cos(x)+2xe^{y})dx+g(y)=y\sin(x)+x^2e^{y}+g(y)
+\end{equation*}
+\item find $g(y)$
+
+\begin{equation*}
+ \frac{\partial f(x,y)}{\partial y}=N=\sin(x)+x^2e^{y}+g'(y)=(\sin(x)+x^{2}e^{y}-1)
+\end{equation*}
+Therefore $g'(y)=-1$ and $g(y)=-y +c$
+\end{enumerate}
+\item Final solution is:
+
+\begin{equation*}
+ \boxed{f(x,y)=y\sin(x)+x^2e^{y}-y+c}
+\end{equation*}
+\end{exmp}
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+
+
+
+\section{Integrating factor}
+\begin{exmp}{}
+Given the following DE:
+\begin{equation}
+\left(2y-6x\right)dx +\left(3x-4x^2y^{-1}\right)dy=0
+\end{equation}
+It is NOT exact. But, if we multiply the above equation by $xy^2$, it is transformed into an exact one!
+\begin{equation}
+xy^2\left(2y-6x\right)dx +xy^2\left(3x-4x^2y^{-1}\right)dy=0
+\end{equation}
+\label{simpleIntFactor}
+\end{exmp}
+(verify!)
+
+
+
+
+Basic idea of integrating factors:  multiply a non-exact equation, e.g.:
+\begin{equation}
+P(x,y)dx+Q(x,y)dy=0
+\end{equation}
+By a function $U(x,y)$, such that the resulting equation:
+\begin{equation}
+U(x,y)P(x,y)dx+U(x,y)Q(x,y)dy=0
+\end{equation}
+is EXACT! 
+
+We call $U(x,y)$ an \textbf{integrating factor}.
+
+We find a function $U(x,y)$ such that (compatibility condition):
+\begin{equation}
+\frac{\partial U(x,y)P(x,y)}{\partial y}=\frac{\partial U(x,y)Q(x,y)}{\partial x}
+\end{equation}
+
+
+
+\subsection{How do we find integrating factors?}
+For simple cases (such as \ref{simpleIntFactor}), the integrating factors may be found by analysis or inspection. But for most cases, we need a more formal approach to find the integrating factors.
+
+
+We know that the integrating factor MUST satisfy the following condition:
+\begin{equation}
+\frac{\partial U(x,y)P(x,y)}{dy}=\frac{\partial U(x,y)Q(x,y)}{dx}
+\label{chainrule}
+\end{equation}
+
+Therefore, we can apply the product rule to obtain:
+\begin{equation}
+P(x,y)\frac{\partial U(x,y)}{\partial y}+U(x,y)\frac{\partial P(x,y)}{\partial y}=Q(x,y)\frac{\partial U(x,y)}{dx}+U(x,y)\frac{\partial Q(x,y)}{\partial x}
+\end{equation}
+
+This equation is \textbf{more} complex...unless we assume that the integrating factor is only a function of ONE variable: e.g. $U=U(x)$. In which case: $\frac{\partial U(x,y)}{dy} =0$ and $\frac{\partial U(x,y)}{\partial x}=\frac{d U(x,y)}{dx}$. 
+
+We obtain:
+
+\begin{equation}
+\frac{1}{U}\frac{dU}{dx}=\frac{1}{Q}\left(\frac{\partial P(x,y)}{\partial y}-\frac{\partial Q(x,y)}{\partial x}\right)
+\end{equation}
+By setting the RHS equal to $R$ yields:
+
+\begin{equation}
+\frac{1}{U}\frac{dU}{dx}=R
+\end{equation}
+or
+\begin{equation}
+\boxed{U(x)=e^{\int R(x) \, dx}}
+\end{equation}
+where we have omitted the constant of integration.
+
+
+
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\begin{exmp}{Integrating factors:}
+Solve the following IVP
+\begin{equation}
+(e^x-\sin(y))dx+\cos(y)dy=0
+\end{equation}
+
+\textbf{Solution:}
+\begin{enumerate}
+\item Check for exactness: 
+\begin{equation}
+P=e^x-sin(y) \qquad \text{and} \qquad Q=\cos(y)
+\end{equation}
+and
+\begin{equation}
+\frac{\partial P}{\partial y}=-\cos(y)\qquad \text{and} \qquad \frac{\partial Q}{\partial x}=0
+\end{equation}
+the equation is NOT exact!
+\item Find the integrating factors
+\begin{equation}
+R=\frac{1}{Q}\left(P_y-Q_x\right)=\frac{1}{\cos(y)}\left(-\cos(y)-0\right)=\frac{-cos(y)}{\cos(y)}=-1
+\end{equation}
+We compute the integrating factor as:
+\begin{equation}
+U(x)=\exp \int R(x)dx=\exp{\int -1 dx} =e^{-x}
+\end{equation}
+Our integrating factor is $e^{-x}$!
+
+We can re-write the original equation as an exact equation!
+\begin{equation}
+\underbrace{e^{-x}(e^x-\sin(y))}_{M(x,y)}dx+\underbrace{e^{-x}\cos(y)}_{N(x,y)}dy=0
+\end{equation}
+(not a bad idea to double check)
+
+\item Solve the exact equation: for an exact equation, we know that:
+\begin{equation}
+F(x,y)=\int M dx=  \int ((1-e^{-x}\sin(y))) dx+ g(y) = x+e^{-x}\sin(y)+g(y)
+\end{equation}
+From the above equation, we can now derive with respect to $y$ in order to find the term $g(y)$
+\begin{equation}
+\frac{\partial F(x,y)}{\partial y}= e^{-x}\cos(y)+g'(y) = \underbrace{e^{-x}\cos(y)}_{N(x,y)}
+\end{equation}
+Hence:  $g'(y)=0$ and $g(y)=cst$.
+The general solution is then:
+\begin{equation}
+F(x,y)= x+e^{-x}\sin(y)+c
+\end{equation}
+\end{enumerate}
+\end{exmp}
+\begin{center}
+\noindent\rule{4cm}{0.4pt}
+\end{center}
+
+\updateinfo[September 19, 2018]
+

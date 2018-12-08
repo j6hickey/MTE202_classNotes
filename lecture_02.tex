@@ -1,0 +1,174 @@
+\chapter*{Lecture 2}
+\begin{recall}{}{}
+\begin{itemize}
+\item What is a differential equation? (eq. expressing relationship between variable and their derivative)
+\item Dependent vs Independent variable
+\item Function (if for each independent variable there is ONLY 1 value of the dependent variable)
+\item Difference between ODE and PDE
+\item Discussion: why find an analytical solution?
+\end{itemize}
+\end{recall}
+
+
+
+\subsection*{PDE vs ODE}
+A differential equation involving ordinary derivatives with respect to a single independent variable is called an \textbf{ordinary differential equation}. A differential equation involving partial derivatives with respect to more than one independent variable is a \textbf{partial differential equation}.
+
+\begin{exmp}{}
+An example involving the 1-D unsteady heat equation is given below:
+\begin{equation}
+\frac{\partial T}{\partial t}=\alpha \frac{\partial^2 T}{\partial x^2}
+\end{equation}
+The temperature in this equation varies both in time and in space! This is a PDE (not discussed in this class)\\
+NOTE:
+\begin{itemize}
+\item $\partial$  is used when a function; say f(x,y,z) depends on more than 1 variable
+\item $d$ is used when a function; say f(t) depends on only 1 variable.
+\end{itemize}
+The stylized $d$ is typically called "del","partial dee", "partial", "curly dee" etc.
+\end{exmp}
+
+
+
+\subsection*{Typical notation}
+Given $x$ which is a function of the independent variable $t$. The differentiation of $x$ with regards to $t$, can be written as:
+\vspace{0.5cm}
+\begin{itemize}
+ \item $\frac{d x(t)}{d t}$, $\frac{d^2 x(t)}{d t^2}$ ... $\frac{d^n x(t)}{d t^n}$ which is the representation by Leibniz \vspace{0.5cm}
+ \item  $x'(t)$, $x''(t)$, ...  $x^{(n)}(t)$ representation used by Lagrange \vspace{0.5cm}
+ \item $\dot{x}(t)$, $\ddot{x}(t)$, $\dddot{x}(t)$  representation used by Newton
+\end{itemize}
+\vspace{0.5cm}
+Recall that the notations are fully equivalent!
+$\frac{d x(t)}{d t}= x'(t) = \dot{x}(t)$ 
+There is a standard practice to use $ \dot{x}(t)$ for time derivatives and $x'(y)$ for spatial derivatives.
+
+
+\subsection*{Order}
+The order of a differential equation is the order of the highest-order derivative present in the equation.
+\begin{exmp}{}
+\begin{eqnarray*}
+&\frac{d^2 y}{d x^2} = \cos(x)+\frac{d y}{d x}\qquad \qquad & \text{2nd order}\\
+&\frac{d y}{d x} = 2^3 & \text{1st order}\\
+&\frac{d^m y}{d x^m} +\frac{d^n y}{d x^n}= 0 & \text{depends on largest value between $m$ and $n$}
+\end{eqnarray*}
+\end{exmp}
+
+\subsection*{Linearity}
+A \textbf{linear differential equation} is one in which the dependent variable $y$ and its derivatives appear in additive combination of their \textbf{first-power}. If we can write the ODE in the form:
+\begin{equation}
+\boxed{
+a_n(x)\frac{d^n y}{dx^n}+a_{n-1}(x)\frac{d^{n-1} y}{dx^{n-1}}+\hdots+a_a(x)\frac{d y}{dx}+a_0(x)y=G(x)}
+\label{GeneralForm}
+\end{equation}
+it is linear.
+
+\begin{exmp}{}
+\begin{eqnarray}
+&3\frac{d^3 y}{dx^3}+(x+1)\frac{d y}{dx}=cos(4x) \qquad\qquad & \text{linear}\\
+&y\frac{d y}{dx}=2 \qquad\qquad & \text{non-linear}\\
+&\left(\frac{d^2 y}{dx^2}\right)^2+y=4 \qquad\qquad & \text{non-linear}
+\end{eqnarray}
+\end{exmp}
+
+\subsection*{Other classifications}
+Based on the general form of the equation \eqref{GeneralForm}:
+\begin{itemize}
+\item If $a_i(x)$ are constants, the ODE is a \textbf{constant coefficient} ODE; otherwise, it is a  \textbf{non-constant coefficient} ODE.
+\begin{equation*}
+3\frac{d^3 y}{dx^3}+4\frac{d y}{dx}=cos(4x)\qquad \qquad\text{linear and cst coefficient}\\
+\end{equation*}
+\item If $G(x)=0$ (typically represents a forcing term), the ODE is \textbf{homogeneous}.
+\begin{equation*}
+\frac x{d^3 y}{dx^3}+\frac{d y}{dx}=cos(4x)\qquad \qquad\text{linear and non-homogeneous}
+\end{equation*}
+$\bLozenge$
+\end{itemize}
+
+
+
+
+
+
+\section{Solutions and Initial Value Problem}
+\subsection{Solution of ODEs}
+A function $\phi(x)$ is a solution of the ODE over a \textbf{particular range} of the independent variable $x$ if the following conditions are satisfied:
+\begin{itemize}
+\item Its derivatives exist (over the specified range)
+\item Substitution into the ODE satisfies the equation.
+\end{itemize}
+
+\begin{exmp}{Check solution of ODE:}
+Check whether $y(x)=x^2-\frac{1}{x}$ is a solution of the ODE:
+\begin{equation*}
+\frac{d^2 y}{dx^2}-\frac{2}{x^2}y=0 
+\end{equation*}
+for the range $0<x< \infty$\\
+(btw, 2nd-order, non cst coeff, homogenous, linear ODE)\\
+Solution:
+\begin{itemize}
+\item[Step 1]: Check the existence of the derivatives:
+\begin{eqnarray*}
+y'=2x+\frac{1}{x^2}\\
+y''=2-\frac{2}{x^3}\\
+y'''=+\frac{6}{x^4}\\
+\hdots
+\end{eqnarray*}
+\item[Step 2]: Check the whether the solution satisfies the ODE:
+\begin{eqnarray*}
+\frac{d^2 y}{dx^2}-\frac{2}{x^2}y=0 \\
+\left(2-\frac{2}{x^3}\right)-\frac{2}{x^2}\left(x^2-\frac{1}{x}\right)=0 \\
+2-\frac{2}{x^3}- 2+\frac{2}{x^3}=0
+\end{eqnarray*}
+SATISFIED!
+\end{itemize}
+ $y(x)=x^2-\frac{1}{x}$ is a solution! $\bLozenge$
+\end{exmp}
+
+\subsection{Explicit and implicit solutions}
+\begin{itemize}
+\item A function $\phi(x)$ that when substituted into an ODE satisfies the equation for all $x$ in the interval, is called an \textbf{explicit solution} to the equation (on a defined interval).
+\item A relation $G(x,y)=0$ is said to be an \textbf{implicit solution} to an ODE if it defines one or more explicit solutions of the ODE.
+\end{itemize}
+
+\begin{exmp}{Explicit solution:}
+Show that the function  $y=x^2$, on the interval $-\infty <x<\infty$, is a solution to the differential equation:
+\begin{equation}
+(y'')^3+(y')^2 -y-3x^2-8=0
+\end{equation}
+\textbf{Solution:} we can compute $y'=2x$ and $y''=2$ to find: $(2)^3+(2x)^2 -x^2-3x^2-8=0$. Therefore, $y=x^2$ is an explicit solution .$\bLozenge$
+\end{exmp}
+
+
+\begin{exmp}{Implicit solution: }
+Test whether: $x^2+y^2-25=0$ is an implicit solution of the differential equation:
+\begin{equation}
+yy'+x=0
+\end{equation}
+on the interval $-5<x<5$.\\
+\textbf{Solution:} We can rewrite the solution such that: $y=\sqrt{25-x^2}$ (other solutions also possible). The derivative is then: $y'=-\frac{x}{\sqrt{25-x^2}}$. By replacing in the ODE, we find:
+\begin{eqnarray}
+yy'+x=0\\
+\sqrt{25-x^2}\left(-\frac{x}{\sqrt{25-x^2}}\right)+x=0
+\end{eqnarray}
+SATISFIED. Therefore, we have an implicit solution to the ODE. $\bLozenge$
+\end{exmp}
+
+
+\begin{exmp}{Implicit solution (Nagel et al. p 8, enrichment) }
+Show that : $x+y+e^{xy}=0$ is an implicit solution to the following equation:
+\begin{equation}
+(1+xe^{xy})\frac{dy}{dx}+1+ye^{xy}=0
+\end{equation}
+\textbf{Solution:} This problem does not allow us to directly substitute the solution into the ODE. We can show, using a more rigorous implicit function theorem that the solution is differentiable. Once that is shown, we can differentiate the solution with respect to $x$:
+\begin{equation}
+\frac{d}{dx}(x+y+e^{xy})=1+\frac{dy}{dx}+ye^{xy}=1+\frac{dy}{dx}+(x+y+e^{xy})e^{xy}=0
+\end{equation}
+By reorganizing the equation, we obtain:
+\begin{equation}
+(1+xe^{xy})\frac{dy}{dx}+1+ye^{xy}=0
+\end{equation}
+which is identical to our original equation.
+ $\bLozenge$
+\end{exmp}
+\updateinfo[September 11, 2018]
