@@ -82,7 +82,7 @@ We can sub into the ODE:
 \end{equation*}
 Since $x_0=0$:
 \begin{equation*}
-\sum^\infty_{n=1} a_n nx^{n-1}+2x\sum^\infty_{n=0} a_nx^{n+1}=0
+\sum^\infty_{n=1} a_n nx^{n-1}+\sum^\infty_{n=0} 2a_nx^{n+1}=0 % x needs to be multiplied into the sum to get x^{n+1}
 \end{equation*}
 \item Apply a "shifting index":
 \begin{align*}
@@ -104,7 +104,7 @@ Our equation becomes:
 \begin{equation*}
 \sum^\infty_{k=0} a_{k+1} (k+1) x^{k}+\sum^\infty_{j=1}2 a_{j-1}x^{j}=0
 \end{equation*}
-or
+or:
 \begin{equation*}
 \sum^\infty_{k=0} a_{k+1} (k+1) x^{k}+\sum^\infty_{k=1}2 a_{k-1}x^{k}=0
 \end{equation*}
@@ -114,14 +114,14 @@ We can rewrite as:
 \begin{equation*}
 a_1x^0+ \sum^\infty_{k=1}\left[ a_{k+1} (k+1)+ 2 a_{k-1}\right]x^{k}=0
 \end{equation*}
-Since both sides have to be equal is  clear that:
+Since both sides have to be equal, it is clear that:
 \begin{align*}
  \begin{cases}
 a_1=0\\
-a_{k+1}(k+1)+2a_{k-1}=0 \qquad \text{for } k\leq 1
+a_{k+1}(k+1)+2a_{k-1}=0 \qquad \text{for } k\geq 1
 \end{cases}
 \end{align*}
-of again:
+or again:
 \begin{align*}
 a_{k+1}=-\frac{2}{k+1}a_{k-1}
 \end{align*}
@@ -201,6 +201,6 @@ The final exam will cover all the material seen in class, tutorial, and assignme
 \item Final is worth 55\% of the class grade
 \end{itemize}
 
-\textbf{Would be happy to get comments on the improvements that could be brought to the MTE202 (projects, tutorial, lectures etc.)}
+\textbf{Would be happy to get comments on the improvements that could be brought to MTE202 (projects, tutorial, lectures etc.)}
 
 
