@@ -148,7 +148,7 @@ f(t)=
 \begin{cases}
    2 \qquad &\text{for } 0<t<5\\
    0  &\text{for } 5<t<10 \\
-   e^{4t} &\text{for } 10<t
+   e^{4t} &\text{for } t>10
 \end{cases}
 \end{equation*}
 \textbf{Solution:}\\
@@ -163,7 +163,7 @@ f(t)=
 F(s)=\Lapl(f(t))&=\int^\infty_0e^{-st}f(t) dt\\
 &=\int^5_0e^{-st}2dt+\int^{10}_5 e^{-st} 0 dt + \int^\infty_{10} e^{-st} e^{4t}dt\\
 &=-\frac{2}{s}\left[e^{-5s}-e^{0}\right]+0+\lim_{N\rightarrow \infty} \int^\infty_{10} e^{-(s-4)t}dt\\
-&=\frac{2}{s}-\frac{2e^{-5s}}{5}+ \frac{e^{-10(s-4)}}{s-4} \qquad \text{for }s>4\\
+&=\frac{2}{s}-\frac{2e^{-5s}}{s}+ \frac{e^{-10(s-4)}}{s-4} \qquad \text{for }s>4\\
 \end{align*}
 
 \end{enumerate}
